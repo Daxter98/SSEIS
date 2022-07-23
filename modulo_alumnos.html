@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+        <br><br>
+
+        <div class="row">
+                
+			<div class="form" style="font-size:25px; display:flex; text-align:center">
+				<form action = "registrarC.php" method="post">
+				Boleta de Alumno: &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
+				&nbsp;&nbsp; <input style ="font-size: 20px; text-align: center;font-family: impact; color:#0D47A1" type="submit" value="Buscar">
+				</div>
+
+			
+            <div class="col-8">
+			<br> <br>
+			       
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+				
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="generales-tab" data-bs-toggle="tab"
+                            data-bs-target="#generales" type="button" role="tab" aria-controls="generales"
+                            aria-selected="true">Generales</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="nacimiento-tab" data-bs-toggle="tab" data-bs-target="#nacimiento"
+                            type="button" role="tab" aria-controls="nacimiento"
+                            aria-selected="false">Nacimiento</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="direccion-tab" data-bs-toggle="tab" data-bs-target="#direccion"
+                            type="button" role="tab" aria-controls="direccion" aria-selected="false">Dirección</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="escolaridad-tab" data-bs-toggle="tab" data-bs-target="#escolaridad"
+                            type="button" role="tab" aria-controls="escolaridad"
+                            aria-selected="false">Escolaridad</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tutor-tab" data-bs-toggle="tab" data-bs-target="#tutor"
+                            type="button" role="tab" aria-controls="tutor" aria-selected="false">Padre/Tutor</button>
+                    </li>
+					<li class="nav-item" role="presentation">
+                        <button class="nav-link" id="faltas-tab" data-bs-toggle="tab" data-bs-target="#faltas"
+                            type="button" role="tab" aria-controls="faltas" aria-selected="false">Faltas</button>
+                    </li>
+                </ul>
+                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+				<img class="img-fluid" width="50px" align="right" src="img/icons/foto_alumno.png">
+            
+                    <div class="tab-pane fade show active" id="generales" role="tabpanel"
+                        aria-labelledby="generales-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-3 fw-bold">BOLETA:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">NOMBRE:</div>
+                            <div class="w-100"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">CURP:</div>
+                            <div class="w-100"></div>
+							<div class="col-6 col-sm-3 fw-bold">SEXO:</div>
+							<div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">ESTADO INSCRIPCION:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">REPROBADAS:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">% ACREDITADO:</div>
+                            <div class="col fw-normal"></div>
+                            
+                          </div>  
+                    </div>
+
+                    <div class="tab-pane fade" id="nacimiento" role="tabpanel" aria-labelledby="nacimiento-tab">
+                        
+
+                        <br>
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-3 fw-bold">FECHA:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">NACIONALIDAD:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">ENTIDAD:</div>
+                            <div class="w-100"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="direccion" role="tabpanel" aria-labelledby="direccion-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-3 fw-bold">CALLE:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">NO. EXT.:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">NO. INT.:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">COLONIA:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">C.P.:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">ESTADO:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">DEL/MPO.:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">TELÉFONO:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">CORREO:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                        </div>
+                        
+                    </div>
+					
+                    <div class="tab-pane fade" id="escolaridad" role="tabpanel" aria-labelledby="escolaridad-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-6 fw-bold">ESCUELA DE PROCEDENCIA:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-6 fw-bold">ENTIDAD FEDERATIVA:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-6 fw-bold">PROMEDIO SECUNDARIA:</div>
+                            <div class="w-100"></div>
+                        </div>
+                       
+                    </div>
+                    <div class="tab-pane fade" id="tutor" role="tabpanel" aria-labelledby="tutor-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-5 fw-bold">NOMBRE DEL TUTOR:</div>
+                            <div class="col fw-normal"></div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">RFC DEL TUTOR:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">NOMBRE DEL PADRE:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">NOMBRE DE LA MADRE:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">TELÉFONO DE CONTACTO:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">TELÉFONO ALTERNATIVO:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-5 fw-bold">CORREO:</div>
+                        </div>
+					</div>
+						<div class="tab-pane fade" id="faltas" role="tabpanel"
+                        aria-labelledby="faltas-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            <div class="col-6 col-sm-3 fw-bold">OLVIDO DE CREDENCIAL:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">REPORTES: </div>
+                            <div class="col fw-normal"></div>
+							<div class="col fw-normal">
+							<a href="#" style="color: #fff; background-color: #75003E; padding:5px; border-radius: 10px;">Agregar</a> </div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">ASISTENCIA:</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">CITATORIOS PENDIENTES:</div>
+                            <div class="w-100"></div>
+							
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

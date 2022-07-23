@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+        <br><br>
+
+
+			
+            <div class="col-8">
+			<br> <br>
+			       
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+				
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="DGE" data-bs-toggle="tab"
+                            data-bs-target="DGE" type="button" role="tab" aria-controls="DGE"
+                            aria-selected="true">DGE</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="DEAE-tab" data-bs-toggle="tab" data-bs-target="#DEAE"
+                            type="button" role="tab" aria-controls="DEAE"
+                            aria-selected="false">DEAE</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="DSE-tab" data-bs-toggle="tab" data-bs-target="#DSE"
+                            type="button" role="tab" aria-controls="DSE" aria-selected="false">DSE</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="UPIS-tab" data-bs-toggle="tab" data-bs-target="#UPIS"
+                            type="button" role="tab" aria-controls="UPIS"
+                            aria-selected="false">UPIS</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="SSEIS-tab" data-bs-toggle="tab" data-bs-target="#SSEIS"
+                            type="button" role="tab" aria-controls="SSEIS" aria-selected="false">SSEIS</button>
+                    </li>
+					
+                </ul>
+                </div>
+                <br><br><br>
+
+                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+				<img class="img-fluid" width="50px" align="right" src="img/icons/foto_alumno.png">
+            
+                     <div class="tab-pane fade show active" id="DGE" role="tabpanel"
+                            aria-labelledby="DGE-tab">
+                            <div class="row" style="text-indent: 6px;">
+                    
+        
+                            <form action="asuntos_pendientes.html" id="formulario" method="POST">
+                            </header>
+                            <div class="row">
+                            <p> </p>
+                            <div  class="fw-bold">Introduce los siguientes datos:  </div>
+                           
+                            <div class="col-6 col-sm-3 fw-bold">ESTADO INSCRIPCION:</div>
+                            <div class="w-100"></div>
+                                  <div class="col">
+                                    <input type="Asunto" class="form-control" name="Asunto" id="Asunto" placeholder="Asunto">
+                                </div>
+                                  <div class="col">
+                                    <input type="Prioridad" class="form-control" name="Prioridad" id="Prioridad" placeholder="Prioridad">
+                                  </div>
+                                </div>
+                                
+                              </div>
+                        
+                            <p> </p>
+                             <div class="container">
+                            
+                              <div class="col">
+                                <label for="start">Fecha Limite:</label>
+                                <input type="date" id="start" name="fecha">
+                                <!--value="2018-07-22"
+                                min="2022-01-01" max="2026-12-31"-->
+                                </div>
+            
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                      <input type="Status" class="form-control" name="Status" id="Status" placeholder="Status">
+                                    </div>
+                                    
+                              <div class="col">
+                                <input type="ID" class="form-control" name="ID" id="ID" placeholder="ID">
+                              </div>
+                            </div>
+                            <p> </p>
+                            </div>
+                    
+                              <div class="col">
+                                <input class="btn btn-primary" type="submit" value="registrar">
+                            </div>
+                            
+                            <p> </p>
+                            </form>
+                        
+                            <div class="row mb-3" id="consulta">
+                            <table class="table">
+                             <thead class="table-light" align="center">
+                             <tr>
+                              <th scope="col">Asunto</th>
+                             <th scope="col">Prioridad</th>
+                             <th scope="col">Fecha Limite</th>
+                             <th scope="col">Status</th>
+                             <th scope="col">Fecha de respuesta</th>
+                             <th scope="col">ID</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                              <?php     
+                             $resultadodos=mysqli_query($conexion, $tablados);
+                             while($rowdos=mysqli_fetch_assoc($resultadodos)) 
+                             {
+                              ?>   
+                              <tr align="right">
+                               <td><?php echo $rowdos["Asunto"]?> </td>
+                               <td><?php echo $rowdos["Prioridad"]?></td>
+                              <td><?php echo $rowdos["Fecha limite"]?></td>
+                              <td><?php echo $rowdos["Status"]?></td>
+                              <td><?php echo $rowdos["Fecha de respuesta"]?></td>
+                              <td><?php echo $rowdos["ID"]?></td>
+                              <td>
+                             <a href="modificaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+                             <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                             </td>
+                             </tr>
+                             <?php
+                             } mysqli_free_result($resultados);
+                             ?> 
+                             </tbody>
+                              </table>
+                               </div>
+            
+                         </div>  
+                        </div>
+
+                    <div class="tab-pane fade show active" id="DEAE" role="tabpanel"
+                            aria-labelledby="DEAE-tab">
+                            <div class="row" style="text-indent: 6px;">
+                    
+                                <form action="asuntos_pendientes.html" id="formulario" method="POST">
+                                </header>
+                                <div class="row">
+                                
+                                    </div>
+                              </div>
+                        
+                    </div>  
+
+        
+                    <div class="tab-pane fade show active" id="DSE" role="tabpanel"
+                         aria-labelledby="DSE-tab">
+                         <div class="row" style="text-indent: 6px;">
+                 
+                            <form action="asuntos_pendientes.html" id="formulario" method="POST">
+                            </header>
+                            <div class="row">
+                            
+                                </div>
+                         
+                           </div>
+                     
+                    </div>  
+
+
+                      <div class="tab-pane fade show active" id="UPIS" role="tabpanel"
+                      aria-labelledby="UPIS-tab">
+                      <div class="row" style="text-indent: 6px;">
+
+                        <form action="asuntos_pendientes.html" id="formulario" method="POST">
+                        </header>
+                        <div class="row">
+                       
+                            </div>
+  
+                      
+                        </div>
+                  
+      
+                   </div>                 
+                   
+                   <div class="tab-pane fade show active" id="SSEIS" role="tabpanel"
+                   aria-labelledby="SSEIS-tab">
+                   <div class="row" style="text-indent: 6px;">
+           
+                    <form action="asuntos_pendientes.html" id="formulario" method="POST">
+                    </header>
+                    <div class="row">
+                    
+                        </div>
+                   
+                       
+                     </div>
+               
+                  
+   
+                </div>  
+    
+           
+   
+    
+   
+
+
+            
+    
+        
+       
+    </div>
+    
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
