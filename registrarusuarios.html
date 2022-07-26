@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+        <br><br>
+
+                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+            
+                     <div class="tab-pane fade show active" id="DGE" role="tabpanel"
+                            aria-labelledby="DGE-tab">
+                            <div class="row" style="text-indent: 6px;">
+        
+                            <div class="row">
+                            <p> </p>
+                            <div  class="fw-bold">REGISTRAR USUARIOS:  </div>
+                            <div  class="fw-bold">Introduce los siguientes datos:  </div>
+                           
+                            <div class="col-6 col-sm-3">Nombre completo</div>
+                            <div class="w-100"></div>
+                                  <div class="col">
+                                    <input type="Nombre" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre Completo">
+                                </div>
+                                 <div class="col">
+                                    <input type="Usuario" class="form-control" name="Usuario" id="Usuario" placeholder="Usuario">
+                                  </div>
+                                </div>
+                                
+                              </div>
+                        
+                            <p> </p>
+                             <div class="container">
+                            
+                              <div class="col">
+                                <label for="start">Contraseña</label>
+                                </div>
+            
+                                <div class="row align-items-start">
+                                    <div class="col-6">
+                                      <input type="Contraseña" class="form-control" name="Contraseña" id="Contraseña" placeholder="Contraseña">
+                                    </div>
+                                    
+                              <div class="col-6">
+                                <input type="ConfirmaContraseña" class="form-control" name="ConfirmaContraseña" id="ConfirmaContraseña" placeholder="Confirmar Contraseña">
+                              </div>
+
+                              <div class="col-6">
+                                <input type="Cargo" class="form-control" name="Cargo" id="Cargo" placeholder="Cargo">
+                              </div>
+
+                              <div class="col-6">
+                              <select class="form-select mb-5" id="lista_acceso" name="acceso" aria-label="Default select example">
+                                <option selected>--Seleccione el nivel de  acceso--</option>
+                                <option value="admin">Admin</option>
+                                <option value="moderado">Moderato</option>
+                                <option value="user">User</option>
+                                </select>
+                                </div>
+                            
+                            </div>
+                            <p> </p>
+                            </div>
+                    
+                              <div class="col">
+                                <input class="btn btn-primary" type="submit" value="registrar">
+                            </div>
+                            
+                            <p> </p>
+                            </form>
+                        
+                            <div class="row mb-3" id="consulta">
+                            <table class="table">
+                             <thead class="table-light" align="center">
+                             <tr>
+                              <th scope="col">Nombre</th>
+                             <th scope="col">Usuario</th>
+                             <th scope="col">Cargo</th>
+                             <th scope="col">Nivel de Acceso</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                              <tr align="right">
+                               <td><?php echo $rowdos["Nombre"]?> </td>
+                               <td><?php echo $rowdos["Usuario"]?></td>
+                              <td><?php echo $rowdos["Contraseña"]?></td>
+                              <td><?php echo $rowdos["Cargo"]?></td>
+                              <td><?php echo $rowdos["NivelAcceso"]?></td>
+                              <td>
+                             <a href="modificaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+                             <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                             </td>
+                             </tr>
+                             
+                             </tbody>
+                              </table>
+                               </div>
+            
+                         </div>  
+                        </div>
+
+    </div>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
