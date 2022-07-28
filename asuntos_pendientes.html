@@ -116,8 +116,8 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
 				
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="DGE" data-bs-toggle="tab"
-                            data-bs-target="DGE" type="button" role="tab" aria-controls="DGE"
+                        <button class="nav-link active" id="DGE-tab" data-bs-toggle="tab"
+                            data-bs-target="#DGE" type="button" role="tab" aria-controls="DGE"
                             aria-selected="true">DGE</button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -159,15 +159,18 @@
                              <th scope="col">Fecha Limite</th>
                              <th scope="col">Status</th>
                              <th scope="col">Fecha de respuesta</th>
-                             <th scope="col">ID</th>
+                             <th scope="col">ID1</th>
                              </tr>
                              </thead>
                              <tbody>
-                              <?php     
+                            <!-- 
+                             <?php     
                              $resultadodos=mysqli_query($conexion, $tablados);
                              while($rowdos=mysqli_fetch_assoc($resultadodos)) 
                              {
                               ?>   
+                               -->
+
                               <tr align="right">
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
@@ -180,9 +183,11 @@
                              <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                              </td>
                              </tr>
+                             <!-- 
                              <?php
                              } mysqli_free_result($resultados);
                              ?> 
+                             -->
                              </tbody>
                               </table>
                                </div>
@@ -191,7 +196,7 @@
                         </div>
                       
 
-                    <div class="tab-pane fade show active" id="DEAE" role="tabpanel"
+                    <div class="tab-pane fade" id="DEAE" role="tabpanel"
                             aria-labelledby="DEAE-tab">
                             <div class="row" style="text-indent: 6px;">
                     
@@ -204,15 +209,18 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID</th>
+                                 <th scope="col">ID2</th>
                                  </tr>
                                  </thead>
                                  <tbody>
+                                 <!-- 
+
                                   <?php     
                                  $resultadodos=mysqli_query($conexion, $tablados);
                                  while($rowdos=mysqli_fetch_assoc($resultadodos)) 
                                  {
                                   ?>   
+                                  -->
                                   <tr align="right">
                                    <td><?php echo $rowdos["Asunto"]?> </td>
                                    <td><?php echo $rowdos["Prioridad"]?></td>
@@ -225,9 +233,11 @@
                                  <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
+                                 <!-- 
                                  <?php
                                  } mysqli_free_result($resultados);
                                  ?> 
+                                -->
                                  </tbody>
                                   </table>
                                    </div>
@@ -236,7 +246,7 @@
                     </div>  
 
         
-                    <div class="tab-pane fade show active" id="DSE" role="tabpanel"
+                    <div class="tab-pane fade" id="DSE" role="tabpanel"
                          aria-labelledby="DSE-tab">
                          <div class="row" style="text-indent: 6px;">
                  
@@ -249,15 +259,17 @@
                              <th scope="col">Fecha Limite</th>
                              <th scope="col">Status</th>
                              <th scope="col">Fecha de respuesta</th>
-                             <th scope="col">ID</th>
+                             <th scope="col">ID3</th>
                              </tr>
                              </thead>
                              <tbody>
+                              <!-- 
                               <?php     
                              $resultadodos=mysqli_query($conexion, $tablados);
                              while($rowdos=mysqli_fetch_assoc($resultadodos)) 
                              {
                               ?>   
+                            -->
                               <tr align="right">
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
@@ -270,9 +282,11 @@
                              <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                              </td>
                              </tr>
+                             <!-- 
                              <?php
                              } mysqli_free_result($resultados);
                              ?> 
+                            -->
                              </tbody>
                               </table>
                                </div>
@@ -282,7 +296,7 @@
                     </div>  
 
 
-                      <div class="tab-pane fade show active" id="UPIS" role="tabpanel"
+                      <div class="tab-pane fade" id="UPIS" role="tabpanel"
                       aria-labelledby="UPIS-tab">
                       <div class="row" style="text-indent: 6px;">
 
@@ -295,15 +309,17 @@
                            <th scope="col">Fecha Limite</th>
                            <th scope="col">Status</th>
                            <th scope="col">Fecha de respuesta</th>
-                           <th scope="col">ID</th>
+                           <th scope="col">ID4</th>
                            </tr>
                            </thead>
                            <tbody>
+                            <!-- 
                             <?php     
                            $resultadodos=mysqli_query($conexion, $tablados);
                            while($rowdos=mysqli_fetch_assoc($resultadodos)) 
                            {
                             ?>   
+                            -->
                             <tr align="right">
                              <td><?php echo $rowdos["Asunto"]?> </td>
                              <td><?php echo $rowdos["Prioridad"]?></td>
@@ -316,9 +332,11 @@
                            <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                            </td>
                            </tr>
+                           <!-- 
                            <?php
                            } mysqli_free_result($resultados);
                            ?> 
+                           -->
                            </tbody>
                             </table>
                              </div>
@@ -329,7 +347,7 @@
       
                    </div>                 
                    
-                   <div class="tab-pane fade show active" id="SSEIS" role="tabpanel"
+                   <div class="tab-pane fade" id="SSEIS" role="tabpanel"
                    aria-labelledby="SSEIS-tab">
                    <div class="row" style="text-indent: 6px;">
            
@@ -342,15 +360,17 @@
                        <th scope="col">Fecha Limite</th>
                        <th scope="col">Status</th>
                        <th scope="col">Fecha de respuesta</th>
-                       <th scope="col">ID</th>
+                       <th scope="col">ID5</th>
                        </tr>
                        </thead>
                        <tbody>
+                        <!--
                         <?php     
                        $resultadodos=mysqli_query($conexion, $tablados);
                        while($rowdos=mysqli_fetch_assoc($resultadodos)) 
                        {
                         ?>   
+                      -->
                         <tr align="right">
                          <td><?php echo $rowdos["Asunto"]?> </td>
                          <td><?php echo $rowdos["Prioridad"]?></td>
@@ -363,9 +383,11 @@
                        <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                        </td>
                        </tr>
+                       <!--
                        <?php
                        } mysqli_free_result($resultados);
                        ?> 
+                      -->
                        </tbody>
                         </table>
                          </div>
