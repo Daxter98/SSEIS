@@ -32,9 +32,85 @@
         </div>
         <br><br>
 
+        <form action="asuntos_pendientes.html" id="formulario" method="POST">
+        </header>
+        <div class="row">
+        <p> </p>
+        <div  class="fw-bold">Introduce los siguientes datos:  </div>
+       
+        <div class="w-100"></div>
+      </div>
 
+      <div class="container"></div>
+              <div class="col"  aria-label="Default select example" >
+                <div class="col-6 col-sm-3 fw-bold" >
+                <input type="Asunto" class="form-control" name="Asunto" id="Asunto" placeholder="Asunto">
+                
+            </div>
+          </div>
+          <p> </p>
+        
+            <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+              <select class="form-select mb-5" id="Status" name="Status" aria-label="Default select example">
+                <option selected>1</option>
+                <option selected>2</option>
+                <option selected>3</option>
+                <option selected>Prioridad</option>
+              </select>
+          </div>
+            
+        
+        <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
+          <div class="col">
+            <label for="start">Fecha Limite:</label>
+            <input type="date" id="start" name="fecha">
+            <value="2018-07-22"
+            min="2022-01-01" max="2026-12-31">
+            </div>
+          </div>
+          <p> </p>
+        
+            <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+              <select class="form-select mb-5" id="Status" name="Status" aria-label="Default select example">
+                <option selected>1</option>
+                  <option selected>Status</option>
+
+              
+    
+
+              </select>
+          </div>
+          <p> </p>
+        
+          <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+            <select class="form-select mb-5" id="Area" name="Area" aria-label="Default select example">
+              <option selected>DGE</option>
+                <option selected>DEAE</option>
+                <option selected>DSE</option>
+                <option selected>UPIS</option>
+                <option selected>SSEIS</option>
+                <option selected>Seleccione Area</option>
+
+            
+  
+
+            </select>
+        </div>
+        <p> </p>
+       
+
+          <div class="col">
+            <input class="btn btn-primary" type="submit" value="registrar">
+        </div>
+         </div>
+        <p> </p>
+        
+    
 			
-            <div class="col-8">
+            <div class="col-10">
 			<br> <br>
 			       
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -64,65 +140,107 @@
                     </li>
 					
                 </ul>
-                </div>
+             
                 <br><br><br>
 
-                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
-				<img class="img-fluid" width="50px" align="right" src="img/icons/foto_alumno.png">
+                <div class="tab-content p-5 border border-2" style="height: center;" id="myTabContent">
+				
             
                      <div class="tab-pane fade show active" id="DGE" role="tabpanel"
                             aria-labelledby="DGE-tab">
                             <div class="row" style="text-indent: 6px;">
-                    
-        
-                            <form action="asuntos_pendientes.html" id="formulario" method="POST">
-                            </header>
-                            <div class="row">
-                            <p> </p>
-                            <div  class="fw-bold">Introduce los siguientes datos:  </div>
-                           
-                            <div class="col-6 col-sm-3 fw-bold">ESTADO INSCRIPCION:</div>
-                            <div class="w-100"></div>
-                                  <div class="col">
-                                    <input type="Asunto" class="form-control" name="Asunto" id="Asunto" placeholder="Asunto">
-                                </div>
-                                  <div class="col">
-                                    <input type="Prioridad" class="form-control" name="Prioridad" id="Prioridad" placeholder="Prioridad">
-                                  </div>
-                                </div>
-                                
-                              </div>
-                        
-                            <p> </p>
-                             <div class="container">
-                            
-                              <div class="col">
-                                <label for="start">Fecha Limite:</label>
-                                <input type="date" id="start" name="fecha">
-                                <!--value="2018-07-22"
-                                min="2022-01-01" max="2026-12-31"-->
-                                </div>
+                  
+                            <div class="row mb-7" id="consulta">
+                            <table class="table">
+                             <thead class="table-light" align="right">
+                             <tr>
+                              <th scope="col">Asunto</th>
+                             <th scope="col">Prioridad</th>
+                             <th scope="col">Fecha Limite</th>
+                             <th scope="col">Status</th>
+                             <th scope="col">Fecha de respuesta</th>
+                             <th scope="col">ID</th>
+                             </tr>
+                             </thead>
+                             <tbody>
+                              <?php     
+                             $resultadodos=mysqli_query($conexion, $tablados);
+                             while($rowdos=mysqli_fetch_assoc($resultadodos)) 
+                             {
+                              ?>   
+                              <tr align="right">
+                               <td><?php echo $rowdos["Asunto"]?> </td>
+                               <td><?php echo $rowdos["Prioridad"]?></td>
+                              <td><?php echo $rowdos["Fecha limite"]?></td>
+                              <td><?php echo $rowdos["Status"]?></td>
+                              <td><?php echo $rowdos["Fecha de respuesta"]?></td>
+                              <td><?php echo $rowdos["ID"]?></td>
+                              <td>
+                             <a href="Modificar_Asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
+                             <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                             </td>
+                             </tr>
+                             <?php
+                             } mysqli_free_result($resultados);
+                             ?> 
+                             </tbody>
+                              </table>
+                               </div>
             
-                                <div class="row align-items-start">
-                                    <div class="col">
-                                      <input type="Status" class="form-control" name="Status" id="Status" placeholder="Status">
-                                    </div>
-                                    
-                              <div class="col">
-                                <input type="ID" class="form-control" name="ID" id="ID" placeholder="ID">
-                              </div>
-                            </div>
-                            <p> </p>
-                            </div>
+                         </div>  
+                        </div>
+                      
+
+                    <div class="tab-pane fade show active" id="DEAE" role="tabpanel"
+                            aria-labelledby="DEAE-tab">
+                            <div class="row" style="text-indent: 6px;">
                     
-                              <div class="col">
-                                <input class="btn btn-primary" type="submit" value="registrar">
-                            </div>
-                            
-                            <p> </p>
-                            </form>
+                              <div class="row mb-3" id="consulta">
+                                <table class="table">
+                                 <thead class="table-light" align="center">
+                                 <tr>
+                                  <th scope="col">Asunto</th>
+                                 <th scope="col">Prioridad</th>
+                                 <th scope="col">Fecha Limite</th>
+                                 <th scope="col">Status</th>
+                                 <th scope="col">Fecha de respuesta</th>
+                                 <th scope="col">ID</th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+                                  <?php     
+                                 $resultadodos=mysqli_query($conexion, $tablados);
+                                 while($rowdos=mysqli_fetch_assoc($resultadodos)) 
+                                 {
+                                  ?>   
+                                  <tr align="right">
+                                   <td><?php echo $rowdos["Asunto"]?> </td>
+                                   <td><?php echo $rowdos["Prioridad"]?></td>
+                                  <td><?php echo $rowdos["Fecha limite"]?></td>
+                                  <td><?php echo $rowdos["Status"]?></td>
+                                  <td><?php echo $rowdos["Fecha de respuesta"]?></td>
+                                  <td><?php echo $rowdos["ID"]?></td>
+                                  <td>
+                                 <a href="Modificar_Asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
+                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                 </td>
+                                 </tr>
+                                 <?php
+                                 } mysqli_free_result($resultados);
+                                 ?> 
+                                 </tbody>
+                                  </table>
+                                   </div>
+                              </div>
                         
-                            <div class="row mb-3" id="consulta">
+                    </div>  
+
+        
+                    <div class="tab-pane fade show active" id="DSE" role="tabpanel"
+                         aria-labelledby="DSE-tab">
+                         <div class="row" style="text-indent: 6px;">
+                 
+                          <div class="row mb-3" id="consulta">
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
@@ -148,7 +266,7 @@
                               <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                               <td><?php echo $rowdos["ID"]?></td>
                               <td>
-                             <a href="modificaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+                             <a href="Modificar_Asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
                              <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                              </td>
                              </tr>
@@ -158,33 +276,6 @@
                              </tbody>
                               </table>
                                </div>
-            
-                         </div>  
-                        </div>
-
-                    <div class="tab-pane fade show active" id="DEAE" role="tabpanel"
-                            aria-labelledby="DEAE-tab">
-                            <div class="row" style="text-indent: 6px;">
-                    
-                                <form action="asuntos_pendientes.html" id="formulario" method="POST">
-                                </header>
-                                <div class="row">
-                                
-                                    </div>
-                              </div>
-                        
-                    </div>  
-
-        
-                    <div class="tab-pane fade show active" id="DSE" role="tabpanel"
-                         aria-labelledby="DSE-tab">
-                         <div class="row" style="text-indent: 6px;">
-                 
-                            <form action="asuntos_pendientes.html" id="formulario" method="POST">
-                            </header>
-                            <div class="row">
-                            
-                                </div>
                          
                            </div>
                      
@@ -195,11 +286,42 @@
                       aria-labelledby="UPIS-tab">
                       <div class="row" style="text-indent: 6px;">
 
-                        <form action="asuntos_pendientes.html" id="formulario" method="POST">
-                        </header>
-                        <div class="row">
-                       
-                            </div>
+                        <div class="row mb-3" id="consulta">
+                          <table class="table">
+                           <thead class="table-light" align="center">
+                           <tr>
+                            <th scope="col">Asunto</th>
+                           <th scope="col">Prioridad</th>
+                           <th scope="col">Fecha Limite</th>
+                           <th scope="col">Status</th>
+                           <th scope="col">Fecha de respuesta</th>
+                           <th scope="col">ID</th>
+                           </tr>
+                           </thead>
+                           <tbody>
+                            <?php     
+                           $resultadodos=mysqli_query($conexion, $tablados);
+                           while($rowdos=mysqli_fetch_assoc($resultadodos)) 
+                           {
+                            ?>   
+                            <tr align="right">
+                             <td><?php echo $rowdos["Asunto"]?> </td>
+                             <td><?php echo $rowdos["Prioridad"]?></td>
+                            <td><?php echo $rowdos["Fecha limite"]?></td>
+                            <td><?php echo $rowdos["Status"]?></td>
+                            <td><?php echo $rowdos["Fecha de respuesta"]?></td>
+                            <td><?php echo $rowdos["ID"]?></td>
+                            <td>
+                           <a href="Modificar_Asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
+                           <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                           </td>
+                           </tr>
+                           <?php
+                           } mysqli_free_result($resultados);
+                           ?> 
+                           </tbody>
+                            </table>
+                             </div>
   
                       
                         </div>
@@ -211,11 +333,42 @@
                    aria-labelledby="SSEIS-tab">
                    <div class="row" style="text-indent: 6px;">
            
-                    <form action="asuntos_pendientes.html" id="formulario" method="POST">
-                    </header>
-                    <div class="row">
-                    
-                        </div>
+                    <div class="row mb-3" id="consulta">
+                      <table class="table">
+                       <thead class="table-light" align="center">
+                       <tr>
+                        <th scope="col">Asunto</th>
+                       <th scope="col">Prioridad</th>
+                       <th scope="col">Fecha Limite</th>
+                       <th scope="col">Status</th>
+                       <th scope="col">Fecha de respuesta</th>
+                       <th scope="col">ID</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                        <?php     
+                       $resultadodos=mysqli_query($conexion, $tablados);
+                       while($rowdos=mysqli_fetch_assoc($resultadodos)) 
+                       {
+                        ?>   
+                        <tr align="right">
+                         <td><?php echo $rowdos["Asunto"]?> </td>
+                         <td><?php echo $rowdos["Prioridad"]?></td>
+                        <td><?php echo $rowdos["Fecha limite"]?></td>
+                        <td><?php echo $rowdos["Status"]?></td>
+                        <td><?php echo $rowdos["Fecha de respuesta"]?></td>
+                        <td><?php echo $rowdos["ID"]?></td>
+                        <td>
+                       <a href="Modificar_Asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
+                       <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                       </td>
+                       </tr>
+                       <?php
+                       } mysqli_free_result($resultados);
+                       ?> 
+                       </tbody>
+                        </table>
+                         </div>
                    
                        
                      </div>
@@ -224,20 +377,20 @@
    
                 </div>  
     
-           
-   
+              </div>
+              
     
    
 
 
             
     
-        
+              </div>
        
-    </div>
+    
     
 
-
+  </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
