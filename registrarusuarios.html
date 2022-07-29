@@ -32,101 +32,118 @@
         </div>
         <br><br>
 
-                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
-            
-                     <div class="tab-pane fade show active" id="DGE" role="tabpanel"
-                            aria-labelledby="DGE-tab">
-                            <div class="row" style="text-indent: 6px;">
-        
-                            <div class="row">
-                            <p> </p>
-                            <div  class="fw-bold">REGISTRAR USUARIOS:  </div>
-                            <div  class="fw-bold">Introduce los siguientes datos:  </div>
-                           
-                            <div class="col-6 col-sm-3">Nombre completo</div>
-                            <div class="w-100"></div>
-                                  <div class="col">
-                                    <input type="Nombre" class="form-control" name="Nombre" id="Nombre" placeholder="Nombre Completo">
-                                </div>
-                                 <div class="col">
-                                    <input type="Usuario" class="form-control" name="Usuario" id="Usuario" placeholder="Usuario">
-                                  </div>
-                                </div>
-                                
-                              </div>
-                        
-                            <p> </p>
-                             <div class="container">
-                            
-                              <div class="col">
-                                <label for="start">Contraseña</label>
-                                </div>
-            
-                                <div class="row align-items-start">
-                                    <div class="col-6">
-                                      <input type="Contraseña" class="form-control" name="Contraseña" id="Contraseña" placeholder="Contraseña">
-                                    </div>
-                                    
-                              <div class="col-6">
-                                <input type="ConfirmaContraseña" class="form-control" name="ConfirmaContraseña" id="ConfirmaContraseña" placeholder="Confirmar Contraseña">
-                              </div>
+                <div class="tab-content p-4 border border-0" style="height: auto;" id="myTabContent">
 
-                              <div class="col-6">
-                                <input type="Cargo" class="form-control" name="Cargo" id="Cargo" placeholder="Cargo">
-                              </div>
+                  <div class="row">
+                    <p> </p>
+                    <div  class="fw-bold">Introduce los siguientes datos:  </div>
+                    <div class="col-6 col-sm-3">Nombre Completo:</div>
+                    <div class="w-100"></div>
+                    </div>
 
-                              <div class="col-6">
-                              <select class="form-select mb-5" id="lista_acceso" name="acceso" aria-label="Default select example">
-                                <option selected>--Seleccione el nivel de  acceso--</option>
-                                <option value="admin">Admin</option>
-                                <option value="moderado">Moderato</option>
-                                <option value="user">User</option>
-                                </select>
-                                </div>
-                            
-                            </div>
-                            <p> </p>
-                            </div>
-                    
-                              <div class="col">
-                                <input class="btn btn-primary" type="submit" value="registrar">
-                            </div>
-                            
-                            <p> </p>
-                            </form>
-                        
-                            <div class="row mb-3" id="consulta">
-                            <table class="table">
-                             <thead class="table-light" align="center">
-                             <tr>
-                              <th scope="col">Nombre</th>
-                             <th scope="col">Usuario</th>
-                             <th scope="col">Cargo</th>
-                             <th scope="col">Nivel de Acceso</th>
-                             </tr>
-                             </thead>
-                             <tbody>
-                              <tr align="right">
-                               <td><?php echo $rowdos["Nombre"]?> </td>
-                               <td><?php echo $rowdos["Usuario"]?></td>
-                              <td><?php echo $rowdos["Contraseña"]?></td>
-                              <td><?php echo $rowdos["Cargo"]?></td>
-                              <td><?php echo $rowdos["NivelAcceso"]?></td>
-                              <td>
-                             <a href="modificaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-edit"></button></a> 
-                             <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
-                             </td>
-                             </tr>
-                             
-                             </tbody>
-                              </table>
-                               </div>
-            
-                         </div>  
-                        </div>
+                    <div class="container"></div>
+                    <div class="col"  aria-label="Default select example" >
+                      <div class="col-6 col-sm-3 fw-bold">
+                      <input type="NombreAdmin" class="form-control" name="NombreAdmin" id="NombreAdmin" placeholder="Nombre">
+                  </div>
+                </div>
 
-    </div>
-    
+
+                <div class="row">
+                  <p> </p>
+                  <div class="col-6 col-sm-3">Usuario:</div>
+                  <div class="w-100"></div>
+                  </div>
+
+                  <div class="container"></div>
+                  <div class="col"  aria-label="Default select example" >
+                    <div class="col-6 col-sm-3 fw-bold">
+                    <input type="UsuarioAdmin" class="form-control" name="UsuarioAdmin" id="UsuarioAdmin" placeholder="Usuario">
+                </div>
+              </div>
+
+              <div class="row">
+                <p> </p>
+                <div class="col-6 col-sm-3">Contraseña:</div>
+                <div class="w-100"></div>
+                </div>
+
+                <div class="container"></div>
+                <div class="col"  aria-label="Default select example" >
+                  <div class="col-6 col-sm-3 fw-bold">
+                  <input type="ContrasenaAdmin" class="form-control" name="ContrasenaAdmin" id="ContrasenaAdmin" placeholder="Contraseña">
+              </div>
+            </div>
+            <p> </p>
+
+            <div class="container"></div>
+                <div class="col"  aria-label="Default select example" >
+                  <div class="col-6 col-sm-3 fw-bold">
+                  <input type="ContrasenaAdmin" class="form-control" name="ContrasenaAdmin" id="ContrasenaAdmin" placeholder="Confirmar Contraseña">
+              </div>
+            </div>
+
+            <div class="row">
+              <p> </p>
+              <div class="col-6 col-sm-3">Cargo:</div>
+              <div class="w-100"></div>
+              </div>
+
+              <div class="container"></div>
+              <div class="col"  aria-label="Default select example" >
+                <div class="col-6 col-sm-3 fw-bold">
+                <input type="CargoAdmin" class="form-control" name="CargoAdmin" id="CargoAdmin" placeholder="Cargo">
+            </div>
+          </div>
+          <p> </p>
+
+
+            <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+              <select class="form-select mb-5" id="NivelAcceso" name="NivelAcceso" aria-label="Default select example">
+                <option selected>--Seleccione el nivel de  acceso--</option>
+                <option value="admin">1</option>
+                <option value="moderado">2</option>
+                <option value="user">3</option>
+              </select>
+          </div>
+
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+            <p> </p>
+
+
+         <div class="row mb-3" id="consulta">
+          <table class="table">
+           <thead class="table-light" align="center">
+           <tr>
+            <th scope="col">Nombre</th>
+           <th scope="col">Usuario</th>
+           <th scope="col">Cargo</th>
+           <th scope="col">Nivel de Acceso</th>
+           </tr>
+           </thead>
+           <tbody>
+            <tr align="right">
+             <td><?php echo $rowdos["Nombre"]?> </td>
+             <td><?php echo $rowdos["Usuario"]?></td>
+            <td><?php echo $rowdos["Contraseña"]?></td>
+            <td><?php echo $rowdos["Cargo"]?></td>
+            <td><?php echo $rowdos["NivelAcceso"]?></td>
+            <td>
+           <a href="modificaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+           <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+           </td>
+           </tr>
+           
+           </tbody>
+            </table>
+             </div>
+
+      </div>
+  </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
