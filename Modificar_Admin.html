@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+<title>Modificar Administrador</title>
+
+<body id="body_agenda">
+    <div class="container p-4">
+    <div class="row">
+        <div class="col d-flex justify-content-around align-items-center">
+            <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+        </div>
+        <div class="col-9 d-flex justify-content-around align-items-center">
+            <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+        </div>
+        <div class="col d-flex justify-content-around align-items-center">
+            <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+        </div>
+    </div>
+    <br><br>
+
+    <form action="asuntos_pendientes.html" id="formulario" method="POST">
+    </header>
+    <div class="row">
+    <p> </p>
+    <div  class="fw-bold">Introduce los siguientes datos:  </div>
+   
+    <div class="col-6 col-sm-3 fw-bold">Cargo:</div>
+    <div class="w-100"></div>
+  </div>
+
+  <div class="container"></div>
+          <div class="col"  aria-label="Default select example" >
+            <div class="col-6 col-sm-3 fw-bold" >
+            <input type="CargoAdmin" class="form-control" name="CargoAdmin" id="CargoAdmin" placeholder="Cargo">
+            
+        </div>
+      </div>
+      <p> </p>
+    
+      <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+      <select class="form-select mb-5" id="NivelAcceso" name="NivelAcceso" aria-label="Default select example">
+        <option selected>--Seleccione el nivel de  acceso--</option>
+        <option value="admin">1</option>
+        <option value="moderado">2</option>
+        <option value="user">3</option>
+      </select>
+  </div>
+
+   
+     </div>
+    <p> </p>
+    
+            <div class=" row mb-3">
+                <button type="submit" class="btn btn-primary">Guargar Cambios</button>
+            </div>    
+</body>
+</html>
