@@ -25,6 +25,18 @@ def create_usuario(db: Session, usuario: schemas.UsuarioCreate):
     return db_usuario
 
 
+#Actualizar Usuario - C 
+def update_usuarios(db: Session, id_us:int, us:schemas.UsuarioUpdate):
+    act_usuario= db.query(models.Usuario).filter(models.Usuario.id== id_us).first()
+    act_usuario.usuario= us.usuario
+    act_usuario.password= us.password
+    act_usuario.cargo= us.cargo
+    act_usuario.nivel_acceso= us.nivel_acceso
+
+    db.commit()
+    return act_usuario
+
+
 # def update_paciente(id_paciente: int, db: Session, paciente: schemas.Paciente):
 #     db_paciente = get_paciente(db, id_paciente)
 

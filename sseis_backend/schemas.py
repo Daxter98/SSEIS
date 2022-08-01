@@ -11,6 +11,9 @@ class UsuarioBase(BaseModel):
 class UsuarioCreate(UsuarioBase):
     pass
 
+class UsuarioUpdate(UsuarioBase):
+    pass
+
 class Usuario(UsuarioBase):
     id: int
 
