@@ -49,3 +49,8 @@ def get_usuarios(skip: int = 0, limit: int = 100, db: Session = Depends(get_db))
 @app.put("/usuarios/{id_us}", response_model=schemas.Usuario, status_code=status.HTTP_200_OK)
 def update_usuarios(id_us:int, us:schemas.UsuarioBase, db: Session = Depends(get_db)):
     return crud.update_usuarios(db, id_us, us)
+
+# Delete Users - Y
+@app.delete("/usuarios/{id_us}")
+def eliminar_usuario(id_us:int, us:schemas.UsuarioBase, db: Session = Depends(get_db)):
+    return crud.delete_usuario(id_us, db)
