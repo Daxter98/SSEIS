@@ -51,6 +51,7 @@ def update_usuarios(id_us:int, us:schemas.UsuarioBase, db: Session = Depends(get
     return crud.update_usuarios(db, id_us, us)
 
 # Delete Users - Y
-@app.delete("/usuarios/{id_us}")
-def eliminar_usuario(id_us:int, us:schemas.UsuarioBase, db: Session = Depends(get_db)):
-    return crud.delete_usuario(id_us, db)
+@app.delete("/usuarios/{id_usuario}")
+def eliminar_usuario(id_usuario:int, db: Session = Depends(get_db)):
+    return crud.delete_usuario(id_usuario, db)
+    
