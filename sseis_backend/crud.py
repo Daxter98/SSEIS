@@ -40,12 +40,12 @@ def update_usuarios(db: Session, id_us:int, us:schemas.UsuarioUpdate):
 def delete_usuario(id_usuario: int, db: Session):
     db_usuario = get_usuario(db, id_usuario)
     if db_usuario is None:
-      raise HTTPException(status_code=404, detail="Usuario no encontrada")
+      raise HTTPException(status_code=404, detail="Usuario no encontrado")
     db.delete(db_usuario)
     db.commit()
     return {"ok": True}
 
-    
+
 # def update_paciente(id_paciente: int, db: Session, paciente: schemas.Paciente):
 #     db_paciente = get_paciente(db, id_paciente)
 
