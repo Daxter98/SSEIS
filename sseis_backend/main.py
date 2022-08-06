@@ -1,6 +1,10 @@
-from fastapi import Depends, FastAPI, HTTPException, status
+from re import template
+from fastapi import Depends, FastAPI, HTTPException, status, Request, Response, Form
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse, FileResponse
+
 
 import crud, models, schemas
 from database import SessionLocal, engine
@@ -29,7 +33,24 @@ def get_db():
         yield db
     finally:
         db.close()
-    
+
+
+#HTML RESPONSES PRUEBAS LOGIN
+@app.get("/")
+def root(request: Request):
+    return template.TemplateResponse("index.html", {"request":request})
+
+@app.post("/user/", response_class=HTMLResponse,response_model=schemas.Usuario, status_code=status.HTTP_200_OK)
+def user(request: Request, us:str = Form(), passw: str = Form(), db: Session = Depends(get_db)):
+    html_address= "./views/index.html"
+    us_1= db.query(models.Usuario).filter(models.Usuario.usuario == us).first()
+    con_1= db.query(models.Usuario).filter(models.Usuario.password == passw).first() 
+    if us_1:
+        if con_1:
+            return template.TemplateResponse("./views/vista_administrador.html", {"request":request})
+    return FileResponse(html_address, status_code=201)
+#####################################
+
 
 # Path Operations for Creating Data
 @app.post("/usuarios/", response_model=schemas.Usuario, response_model_exclude={"password"})
