@@ -47,7 +47,7 @@ def user(request: Request, us:str = Form(), passw: str = Form(), db: Session = D
     con_1= db.query(models.Usuario).filter(models.Usuario.password == passw).first() 
     if us_1:
         if con_1:
-            return template.TemplateResponse("./views/vista_administrador.html", {"request":request})
+            return template.TemplateResponse("vista_administrador.html", {"request":request})
     return FileResponse(html_address, status_code=201)
 #####################################
 
