@@ -40,15 +40,24 @@ def get_db():
 def root(request: Request):
     return template.TemplateResponse("index.html", {"request":request})
 
+#NOTAS 05 AGOSTO: funcionamiento correcto a través de /docs, respusta correcta en
+#verificación. Error al implementar código comentado, error al mostrar la vista html
+#----{"detail":[{"loc":["body","us"],"msg":"field required","type":"value_error.missing"},
+# {"loc":["body","passw"],"msg":"field required","type":"value_error.missing"}]}" 
+# POST /user HTTP/1.1 422 Unprocessable Entity
+
 @app.post("/user/", response_class=HTMLResponse,response_model=schemas.Usuario, status_code=status.HTTP_200_OK)
 def user(request: Request, us:str = Form(), passw: str = Form(), db: Session = Depends(get_db)):
-    html_address= "./views/index.html"
+    html_address_ret= "./views/index.html"
+    html_address_ok= "./views/vista_administrador.html"
     us_1= db.query(models.Usuario).filter(models.Usuario.usuario == us).first()
     con_1= db.query(models.Usuario).filter(models.Usuario.password == passw).first() 
     if us_1:
         if con_1:
-            return template.TemplateResponse("vista_administrador.html", {"request":request})
-    return FileResponse(html_address, status_code=201)
+            return FileResponse(html_address_ok, status_code=200)
+            #return template.TemplateResponse(html_address_ok, {"request":request})
+    return FileResponse(html_address_ret, status_code=201)
+    #return RedirectResponse("/")
 #####################################
 
 
