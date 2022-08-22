@@ -71,19 +71,6 @@
           </div>
           <p> </p>
         
-            <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
-
-              <select class="form-select mb-5" id="Status" name="Status" aria-label="Default select example">
-                <option selected>1</option>
-                  <option selected>Status</option>
-
-              
-    
-
-              </select>
-          </div>
-          <p> </p>
-        
           <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
 
             <select class="form-select mb-5" id="Area" name="Area" aria-label="Default select example">
@@ -175,6 +162,7 @@
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
                               <td><?php echo $rowdos["Fecha limite"]?></td>
+                              <td><input type="checkbox" name="empresa" checked /></td>
                               <td><?php echo $rowdos["Status"]?></td>
                               <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                               <td><?php echo $rowdos["ID"]?></td>
@@ -214,7 +202,6 @@
                                  </thead>
                                  <tbody>
                                  <!-- 
-
                                   <?php     
                                  $resultadodos=mysqli_query($conexion, $tablados);
                                  while($rowdos=mysqli_fetch_assoc($resultadodos)) 
@@ -225,6 +212,7 @@
                                    <td><?php echo $rowdos["Asunto"]?> </td>
                                    <td><?php echo $rowdos["Prioridad"]?></td>
                                   <td><?php echo $rowdos["Fecha limite"]?></td>
+                                  <td><input type="checkbox" name="empresa" checked /></td>
                                   <td><?php echo $rowdos["Status"]?></td>
                                   <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                                   <td><?php echo $rowdos["ID"]?></td>
@@ -274,6 +262,7 @@
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
                               <td><?php echo $rowdos["Fecha limite"]?></td>
+                              <td><input type="checkbox" name="empresa" checked /></td>
                               <td><?php echo $rowdos["Status"]?></td>
                               <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                               <td><?php echo $rowdos["ID"]?></td>
@@ -324,6 +313,7 @@
                              <td><?php echo $rowdos["Asunto"]?> </td>
                              <td><?php echo $rowdos["Prioridad"]?></td>
                             <td><?php echo $rowdos["Fecha limite"]?></td>
+                            <td><input type="checkbox" name="empresa" checked /></td>
                             <td><?php echo $rowdos["Status"]?></td>
                             <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                             <td><?php echo $rowdos["ID"]?></td>
@@ -375,6 +365,7 @@
                          <td><?php echo $rowdos["Asunto"]?> </td>
                          <td><?php echo $rowdos["Prioridad"]?></td>
                         <td><?php echo $rowdos["Fecha limite"]?></td>
+                        <td><input type="checkbox" name="empresa" checked /></td>
                         <td><?php echo $rowdos["Status"]?></td>
                         <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                         <td><?php echo $rowdos["ID"]?></td>
