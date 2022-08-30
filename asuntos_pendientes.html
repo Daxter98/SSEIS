@@ -73,24 +73,26 @@
         
           <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
 
-            <select class="form-select mb-5" id="Area" name="Area" aria-label="Default select example">
-              <option selected>DGE</option>
-                <option selected>DEAE</option>
-                <option selected>DSE</option>
-                <option selected>UPIS</option>
-                <option selected>SSEIS</option>
-                <option selected>Seleccione Area</option>
+            <form method="get">
 
-            
-  
-
-            </select>
+              Selecciona el area
+              <br />
+              <input name="DGE" type="checkbox" />  DGE
+              <br />
+              <input name="DEAE" type="checkbox" />  DEAE
+              <br />
+              <input name="DSE" type="checkbox" />  DSE
+              <br />
+              <input name="UPIS" type="checkbox" />  UPIS
+              <br />
+              <input name="SSEIS" type="checkbox" />  SSEIS
+              </form>
         </div>
         <p> </p>
        
 
           <div class="col">
-            <input class="btn btn-primary" type="submit" value="Registrar">
+            <input class="btn btn-primary" type="submit" value="registrar">
         </div>
          </div>
         <p> </p>
@@ -162,7 +164,10 @@
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
                               <td><?php echo $rowdos["Fecha limite"]?></td>
-                              <td><input type="checkbox" name="empresa" checked /></td>
+                              <td><select class="form-select mb-5" id="Area" name="Area" aria-label="height: center">
+                                <option selected>Pendiente</option>
+                               <option selected>Realizado</option>
+                               <option selected> </option></td>
                               <td><?php echo $rowdos["Status"]?></td>
                               <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                               <td><?php echo $rowdos["ID"]?></td>
@@ -212,7 +217,10 @@
                                    <td><?php echo $rowdos["Asunto"]?> </td>
                                    <td><?php echo $rowdos["Prioridad"]?></td>
                                   <td><?php echo $rowdos["Fecha limite"]?></td>
-                                  <td><input type="checkbox" name="empresa" checked /></td>
+                                  <td><select class="form-select mb-5" id="Area" name="Area" aria-label="height: center">
+                                    <option selected>Pendiente</option>
+                                   <option selected>Realizado</option>
+                                   <option selected> </option></td>
                                   <td><?php echo $rowdos["Status"]?></td>
                                   <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                                   <td><?php echo $rowdos["ID"]?></td>
@@ -262,7 +270,10 @@
                                <td><?php echo $rowdos["Asunto"]?> </td>
                                <td><?php echo $rowdos["Prioridad"]?></td>
                               <td><?php echo $rowdos["Fecha limite"]?></td>
-                              <td><input type="checkbox" name="empresa" checked /></td>
+                              <td><select class="form-select mb-5" id="Area" name="Area" aria-label="height: center">
+                                <option selected>Pendiente</option>
+                               <option selected>Realizado</option>
+                               <option selected> </option></td>
                               <td><?php echo $rowdos["Status"]?></td>
                               <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                               <td><?php echo $rowdos["ID"]?></td>
@@ -313,7 +324,10 @@
                              <td><?php echo $rowdos["Asunto"]?> </td>
                              <td><?php echo $rowdos["Prioridad"]?></td>
                             <td><?php echo $rowdos["Fecha limite"]?></td>
-                            <td><input type="checkbox" name="empresa" checked /></td>
+                            <td><select class="form-select mb-5" id="Area" name="Area" aria-label="height: center">
+                              <option selected>Pendiente</option>
+                             <option selected>Realizado</option>
+                             <option selected> </option></td>
                             <td><?php echo $rowdos["Status"]?></td>
                             <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                             <td><?php echo $rowdos["ID"]?></td>
@@ -365,7 +379,10 @@
                          <td><?php echo $rowdos["Asunto"]?> </td>
                          <td><?php echo $rowdos["Prioridad"]?></td>
                         <td><?php echo $rowdos["Fecha limite"]?></td>
-                        <td><input type="checkbox" name="empresa" checked /></td>
+                        <td><select class="form-select mb-5" id="Area" name="Area" aria-label="height: center">
+                          <option selected>Pendiente</option>
+                         <option selected>Realizado</option>
+                         <option selected> </option></td>
                         <td><?php echo $rowdos["Status"]?></td>
                         <td><?php echo $rowdos["Fecha de respuesta"]?></td>
                         <td><?php echo $rowdos["ID"]?></td>
