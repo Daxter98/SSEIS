@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+        <br><br>
+
+    </div>
+    
+    <div  class="fw-bold">Introduce los datos para la Incidencia:  </div>
+
+        <div class="row align-items-start">
+            <div class="col">
+              <input type="Incidencia" class="form-center" name="Incidencia" id="Incidencia" placeholder="Datos de la Incidencia">
+            </div>
+        </div>
+        
+        <p> </p>
+        <div class="row align-items-start">
+            <div class="col">
+              <input type="Ciclo" class="form-center" name="Ciclo" id="Ciclo" placeholder="Ciclo">
+            </div>
+        </div>
+        <p> </p>
+
+        <div class="row align-items-start">
+            <div class="col">
+              <input type="Grupo" class="form-center" name="Grupo" id="Grupo" placeholder="Grupo">
+            </div>
+        </div>
+        <p> </p>
+
+        <div class="row align-items-start">
+            <div class="col">
+              <input type="Alias" class="form-center" name="Alias" id="Alias" placeholder="Alias">
+            </div>
+        </div>
+        <p> </p>
+
+        <div class="row align-items-start">
+            <div class="col">
+              <input type="Folio" class="form-center" name="Folio" id="Folio" placeholder="Folio">
+            </div>
+        </div>
+        <p> </p>
+
+        <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
+            <div class="col">
+              <label for="start">Fecha de la Incidencia:</label>
+              <input type="date" id="start" name="fecha">
+              <value="2018-07-22"
+              min="2022-01-01" max="2026-12-31">
+              </div>
+            </div>
+            <p> </p>
+
+            <p> </p>
+            <div class="row align-items-start">
+                <div class="col">
+                  <input type="Hora" class="form-center" name="Hora" id="Hora" placeholder="Hora">
+                </div>
+            </div>
+            <p> </p>
+                
+                <div class="row align-items-start">
+                    <div class="col">
+                      <input type="ObservacionInc" class="form-control" name="ObservacionInc" id="ObservacionInc" placeholder="Observaciones">
+                    </div>
+                </div>
+                <p> </p>
+
+                <label for="start">Tema:</label>
+
+                <td><select class="form-select mb-5" id="TemaIncidencia" name="TemaIncidencia" aria-label="height: center">
+                <option selected>Seleccione el tema</option>
+                <option>CONSUMIR O POSEER PISOTRÓPICOS O ESTUPEFACIENTES</option>
+                 <option>CONSUMO DE BEBIDAS ALCOHOLICAS</option>
+                 <option>DAÑOS AL INMUEBLE</option>
+                 <option>DISTRIBUIR PISOTRÓPICOS O ESTUPEFACIENTES</option>
+                 <option>EMPLEAR O PERMITIR EL USO INDEBIDO DE CREDENCIALES DE TERCEROS</option>
+                </td>
+
+                <div class="row align-items-start">
+                  <div class="col">
+                    <input type="PersonaReporto" class="form-center" name="PersonaReporto" id="PersonaReporto" placeholder="Persona que reporto">
+                  </div>
+              </div>
+              <p> </p>
+
+              <div class="tab-content p-4 border border-2" style="height: center;" id="myTabContent">
+
+                <div  class="fw-bold"> DATOS DEL CITATORIO </div>
+                <p> </p>
+
+              <div class="row align-items-start">
+                <div class="col">
+                  <input type="DescripcionInc" class="form-control" name="DescripcionInc" id="DescripcionInc" placeholder="Descripcion del hecho">
+                </div>
+            </div>
+            <p> </p>
+
+            <div class="row align-items-start">
+              <div class="col">
+                <input type="ObjetoRetenido" class="form-center" name="ObjetoRetenido" id="ObjetoRetenido" placeholder="Objeto Retenido">
+              </div>
+          </div>
+          <p> </p>
+
+            <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
+                <div class="col">
+                  <label for="start">Fecha del Citatorio:</label>
+                  <input type="date" id="start" name="fecha">
+                  <value="2018-07-22"
+                  min="2022-01-01" max="2026-12-31">
+                  </div>
+                </div>
+                <p> </p>
+
+                <div class="row align-items-start">
+                <div class="col">
+                  <input type="Hora" class="form-center" name="Hora" id="Hora" placeholder="Hora">
+                </div>
+            </div>
+            <p> </p>
+
+            <div class="row align-items-start">
+                <div class="col">
+                  <input type="LugarInc" class="form-center" name="LugarInc" id="LugarInc" placeholder="Lugar">
+                </div>
+            </div>
+            <p> </p>
+
+            <div class="row align-items-start">
+              <div class="col">
+                <input type="PreguntarInc" class="form-center" name="PreguntarInc" id="PreguntarInc" placeholder="Preguntar por">
+              </div>
+          </div>
+          <p> </p>
+
+          <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
+
+            <form method="get"> Normatividad   <br />
+              <input name="1" type="checkbox" /> Apoderarse indebidamente de bienes
+              <br />
+              <input name="2" type="checkbox" /> Asumir actitudes irrespetuosas, provocativas o violentas
+              <br />
+              <input name="3" type="checkbox" />  Conocer y cumplir la Ley Orgánica
+              <br />
+              <input name="4" type="checkbox" />  Dañar, destituir o deteriorar instalaciones
+              <br />
+              <input name="5" type="checkbox" />  Desempeñar con responsabilidad y compromiso académico
+              </form>
+        </div>
+        <p> </p>
+
+        </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
