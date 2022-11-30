@@ -2,7 +2,7 @@
 
 $usuario ="root";
 $contrasena ="";  
-$base = "SSEIS";
+$base = "sseis";
 
 $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
 
@@ -16,6 +16,6 @@ $con=$_POST['con'];
    }
    else
     {
-        header("location: incidencias.html");
+      echo"<script> alert ('Usuario no existe'); window.location='index.html' </script>";
     }
  ?>
