@@ -26,11 +26,13 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
+CREATE DATABASE SSEIS 
+USE SSEIS
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` varchar(16) NOT NULL,
-  `password` varchar(16) NOT NULL,
+  `contrasena` varchar(16) NOT NULL,
   `nombre` varchar(32) DEFAULT NULL,
   `aPaterno` varchar(32) DEFAULT NULL,
   `aMaterno` varchar(32) DEFAULT NULL,
