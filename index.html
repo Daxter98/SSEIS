@@ -104,16 +104,17 @@
                   <div class="mb-3">
                     <div class="text-center">
                       <!-- Correo Electronico -->
+                      
 		                	<div class="mb-3">
-			                	<label for="usuario" class="form-label">Usuario:</label>
-				                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Tu usuario">
+			                	<label for="correo" class="form-label">Usuario:</label>
+				                <input type="correo" class="form-control" name="correo" id="correo" placeholder="Introduce tu correo" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
 			                </div>
                       <!-- FIN Correo Electronico -->
 
                       <!-- Contraseña -->
                       <div class="mb-3">
                         <label for="password" class="form-label">Contraseña</label>
-                       <input type="password" class="form-control" name="password" id="password" placeholder="Tu contraseña">
+                       <input type="password" class="form-control" name="password" id="password" placeholder="Tu contraseña"required pattern="^.{4,12}$">
                       </div>
                       <!-- FIN Contraseña -->
                       <div class="col-12">
