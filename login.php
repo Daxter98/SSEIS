@@ -16,6 +16,6 @@ $con=$_POST['con'];
    }
    else
     {
-      echo"<script> alert ('Usuario no existe'); window.location='index.html' </script>";
+      echo"<script> alert ('Usuario no existente'); window.location='index.html' </script>";
     }
  ?>
