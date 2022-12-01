@@ -33,7 +33,7 @@
       </div>
 
         <br><br>
-        <form action="Registro.html" id="formulario" method="POST">
+        <form action="registro_corresp.php" method="POST">
         </header>
         <div class="row">
         <p> </p>
@@ -45,17 +45,17 @@
     </div>
     <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
         <div class="col">
-          <label for="start">Fecha de Recibido:</label>
-          <input type="date" id="start" name="fecha">
+          <label for="fecha_rec">Fecha de Recibido:</label>
+          <input type="date" id="fecha_rec" name="fecha_rec">
           <value="2018-07-22"
-          min="2022-01-01" max="2026-12-31">
+          min="2022-01-01">
           </div>
  </div>
         <p> </p>
 
         <div class="row align-items-start">
-            <div class="col">
-              <input type="Oficio" class="form-center" name="Oficio" id="Oficio" placeholder="Oficio No">
+            <div class="col"> 
+              <input type="text" class="form-center" name="no_oficio" id="no_oficio" placeholder="No. Oficio">
             </div>
            
         </div>
@@ -63,22 +63,22 @@
         <p> </p>
         <div class="row align-items-start">
             <div class="col">
-              <input type="Remitente" class="form-center" name="Remitente" id="Remitente" placeholder="Remitente">
+              <input type="text" class="form-center" name="remitente" id="remitente" placeholder="Remitente">
             </div>
         </div>
         <p> </p>
         <div class="row align-items-start">
             <div class="col">
-              <input type="Descripcion" class="form-control" name="Descripcion" id="Descripcion" placeholder="Descripcion">
+              <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion">
             </div>
         </div>
         <p> </p>
         <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
             <div class="col">
-              <label for="start">Fecha requerida de respuesta:</label>
-              <input type="date" id="start" name="fecha">
+              <label for="fecha_res">Fecha requerida de respuesta:</label>
+              <input type="date" id="fecha_res" name="fecha_res">
               <value="2018-07-22"
-              min="2022-01-01" max="2026-12-31">
+              min="2022-01-01">
               </div>
             </div>
             <p> </p>
@@ -86,17 +86,17 @@
             <p> </p>
             <div class="row align-items-start">
                 <div class="col">
-                  <input type="Turnado" class="form-center" name="Turnado" id="Turnado" placeholder="Turnado">
+                  <input type="text" class="form-center" name="turnado" id="turnado" placeholder="Turnado">
                 </div>
             </div>
             <p> </p>
 
             <div class="col-sm-3 col-md-3 col-xl-3 col-xl-3" id="form">
                 <div class="col">
-                  <label for="start">Fecha del Turnado:</label>
-                  <input type="date" id="start" name="fecha">
+                  <label for="fecha_tur">Fecha del Turnado:</label>
+                  <input type="date" id="fecha_tur" name="fecha_tur">
                   <value="2018-07-22"
-                  min="2022-01-01" max="2026-12-31">
+                  min="2022-01-01">
                   </div>
                 </div>
                 <p> </p>
@@ -133,14 +133,13 @@
                            <table class="table">
                             <thead class="table-light" align="center">
                             <tr>
-                             <th scope="col">Folio</th>
                             <th scope="col">No Oficio</th>
-                            <th scope="col">Remitente</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Fecha requerida de respuesta</th>
+                            <th scope="col">Asunto</th>
+                            <th scope="col">Fecha recepcion</th>
+                            <th scope="col">Fecha límite de respuesta</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Turnado</th>
                             <th scope="col">Fecha de turnado</th>
-                            <th scope="col">No oficio y fecha de acuse de respuesta</th>
                             <th scope="col">Observaciones</th>
                           <p> </p>
                           
