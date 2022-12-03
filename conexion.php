@@ -1,15 +1,10 @@
 <?php
-$usuario ="root";
-$contrasena ="";  // 
-$servidor = "localhost";
-//$basededatos = "sseis";
 
-$conexion = mysqli_connect($servidor, $usuario, $contrasena); 
-    if(!$conexion)
-        {
-            die("<center><h1>Enlace con servidor fallido</center></h1>");
-        }
-    else{
-        
-    }
+$usuario ="root";
+$contrasena ="";  
+$base = "sseis";
+
+$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+
+
 ?>
