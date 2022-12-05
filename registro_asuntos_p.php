@@ -97,7 +97,7 @@
           <p> </p>
           <div class="row align-items-start">
             <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" method="POST">
-          <td> <select class="form-select mb-9" id="cve_status" name="cve_status" aria-label=".form-select-sm example">
+          <td> <select class="form-select mb-9" id="status" name="status" aria-label=".form-select-sm example">
                             <option selected>Seleccione el status</option>
 
                             <?php     
@@ -106,7 +106,7 @@
                                     while($rowtres=mysqli_fetch_assoc($resultadotres))
                                     {
                                         ?>
-                                            <option value="<?php echo $rowtres["cve_status"] ?>"><?php echo $rowtres["descripcion"] ?></option>
+                                            <option value="<?php echo $rowtres["status"] ?>"><?php echo $rowtres["status"] ?></option>
                                         <?php
                             } mysqli_free_result($resultadotres);
                             ?>
@@ -176,8 +176,8 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-    
-
+    <div class="tab-pane fade show active" id="home" role="tabpanel"
+    aria-labelledby="home">
                             <div class="row" style="text-indent: 6px;">
                             <div class="row mb-7" id="home">
                             <table class="table">
@@ -188,7 +188,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Area 1</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -206,8 +206,8 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                 <a href="modificar_asunto.php">"><button type="button" class="fas fa-edit"></button></a> 
+                                 <a href="eliminar_asunto.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
@@ -236,7 +236,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Area2</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -278,7 +278,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Area3</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -319,7 +319,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Area4</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -347,7 +347,7 @@
                                  </tbody>
                                   </table>
                                    </div>
-                             
+                                   </div>
 
     <div id="menu4" class="container tab-pane fade"><br>
                             <div class="row mb-7" id="menu4">
@@ -359,7 +359,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Area5</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -387,9 +387,6 @@
                                  </tbody>
                                   </table>
                                    </div>
-        
-                 
-
   </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
