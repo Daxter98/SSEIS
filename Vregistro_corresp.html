@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+      </div>
+
+        <br><br>
+        <form action="registro_corresp.php" method="POST">
+        </header>
+        <div class="row">
+        <p> </p>
+    </div>
+    <div class="container">
+
+    <div  class="fw-bold">Introduce los datos para el Registro:   </div>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .column {
+        float: right;
+        width: 50%;
+        padding: 10px;
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      </style>
+      
+
+            <div class="column"> 
+              <input type="text" class="form-center" name="interno" id="interno" size="10" placeholder="Interno">
+            </div>
+
+            <div class="column"> 
+              <input type="text" class="form-center" name="no_folio" id="no_folio" size="10" placeholder="No. Folio">
+            </div>
+        
+            <div class="column">
+              <label for="fecha_of">Fecha de Oficio: </label>
+              <input type="date" id="fecha_of" name="fecha_of">
+            </div> 
+            
+            <div class="column"> 
+              <input type="text" class="form-center" name="asunto" id="asunto" size="40" placeholder="Asunto">
+              <br><br> 
+            </div>
+
+            <div class="col"> 
+              <label for="status"> Seleccione estatus: </label>
+              <select class="form-select mb-9" id="status" name="status" aria-placeholder="Seleccione estatus">
+                
+                <option selected value="1"> Normal</option>
+                <option selected value="2"> Medio </option>
+                <option selected value="3"> Urgente </option>
+                <option selected value="4"> Muy urgente </option>
+                <option selected value="5"> Ultra urgente</option>
+                
+              </select><br><br>
+            </div>
+            
+            
+
+            <div class="col">
+              <label for="detalle"> Descripción: </label>
+              <textarea type="text" class="form-control" name="detalle" id="detalle"> </textarea>
+              <br>
+            </div>
+       
+            <div class="column">
+              <input type="text" class="form-center" name="remitente" id="remitente" placeholder="Remitente">
+            </div>
+
+            <div class="column">
+              <input type="text" class="form-center" name="dest" id="dest" placeholder="Destinatario">
+            </div>
+            
+            <div class="column">
+              <label for="fecha_rec"> Fecha requerida de Recepción: </label>
+              <input type="date" id="fecha_rec" name="fecha_rec">
+            </div>
+           
+            <div class="column">
+              <input type="text" class="form-center" name="turnado" id="turnado" placeholder="Turnado">
+              <br><br>
+            </div>
+            
+            <div class="col-6">
+                  <input class="btn btn-primary" type="submit" value="Registrar">
+              </div>
+              <p> </p>
+
+            </div>
+
+                     
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
