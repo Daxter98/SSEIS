@@ -5,7 +5,12 @@
    // global $conexion;
     $base="sseis";
     $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
-    $tabla= "SELECT * FROM asuntos_pendientes";
+    $tablaDGE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DGE' ";
+    $tablaDEAE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DEAE' ";
+    $tablaDSE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DSE' ";
+    $tablaUPIS= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'UPIS' ";
+    $tablaSSEIS= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'SSEIS' ";
+
 ?>
 <head>
     <meta charset="UTF-8">
@@ -191,7 +196,7 @@
                                  <tbody>
  
  <?php     
-     $resultado=mysqli_query($conexion, $tabla);
+     $resultado=mysqli_query($conexion, $tablaDGE);
         while($row=mysqli_fetch_assoc($resultado)) 
         {
 ?>
@@ -239,7 +244,7 @@
                                  <tbody>
  
  <?php     
-     $resultado=mysqli_query($conexion, $tabla);
+     $resultado=mysqli_query($conexion, $tablaDEAE);
         while($row=mysqli_fetch_assoc($resultado)) 
         {
 ?>
@@ -281,7 +286,7 @@
                                  <tbody>
  
  <?php     
-     $resultado=mysqli_query($conexion, $tabla);
+     $resultado=mysqli_query($conexion, $tablaDSE);
         while($row=mysqli_fetch_assoc($resultado)) 
         {
 ?>
@@ -322,7 +327,7 @@
                                  <tbody>
  
  <?php     
-     $resultado=mysqli_query($conexion, $tabla);
+     $resultado=mysqli_query($conexion, $tablaUPIS);
         while($row=mysqli_fetch_assoc($resultado)) 
         {
 ?>
@@ -362,7 +367,7 @@
                                  <tbody>
  
  <?php     
-     $resultado=mysqli_query($conexion, $tabla);
+     $resultado=mysqli_query($conexion, $tablaSSEIS);
         while($row=mysqli_fetch_assoc($resultado)) 
         {
 ?>
