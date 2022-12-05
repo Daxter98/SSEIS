@@ -131,24 +131,21 @@
 
           Selecciona el area
           <br />
-          <input name="checkbox[]" type="checkbox" value="DGE" />  DGE
+          <input name="siglas_a[]" type="checkbox" value="DGE" />  DGE
           <br />
-          <input name="checkbox[]" type="checkbox" value="DEAE"  />  DEAE
+          <input name="siglas_a[]" type="checkbox" value="DEAE"  />  DEAE
           <br />
-          <input name="checkbox[]" type="checkbox" value="DSE"  />  DSE
+          <input name="siglas_a[]" type="checkbox" value="DSE"  />  DSE
           <br />
-          <input name="checkbox[]" type="checkbox" value="UPIS" />  UPIS
+          <input name="siglas_a[]" type="checkbox" value="UPIS" />  UPIS
           <br />
-          <input name="checkbox[]" type="checkbox" value="SSEIS" />  SSEIS
-          </form>
-        </div>
-        <p> </p>
-       
+          <input name="siglas_a[]" type="checkbox" value="SSEIS" />  SSEIS
 
           <div class="col">
             <input class="btn btn-primary" type="submit" value="Registrar">
         </div>
-         </div>
+          </form>
+        </div>
         <p> </p>
         
     
