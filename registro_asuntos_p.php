@@ -127,20 +127,20 @@
 
           <div class="col-sm-4 col-md-4 col-xl-4 col-xl-4" id="form">
 
-            <form method="get">
+          <form method="POST" action="asuntos.php">
 
-              Selecciona el area
-              <br />
-              <input name="DGE" type="checkbox" id="DGE" value="siglas_a" />  DGE
-              <br />
-              <input name="DEAE" type="checkbox" id="DEAE" value="siglas_a" />  DEAE
-              <br />
-              <input name="DSE" type="checkbox" id="DSE" value="siglas_a" />  DSE
-              <br />
-              <input name="UPIS" type="checkbox" id="UPIS" value="siglas_a" />  UPIS
-              <br />
-              <input name="SSEIS" type="checkbox" id="SSEIS" value="siglas_a" />  SSEIS
-              </form>
+          Selecciona el area
+          <br />
+          <input name="checkbox[]" type="checkbox" value="DGE" />  DGE
+          <br />
+          <input name="checkbox[]" type="checkbox" value="DEAE"  />  DEAE
+          <br />
+          <input name="checkbox[]" type="checkbox" value="DSE"  />  DSE
+          <br />
+          <input name="checkbox[]" type="checkbox" value="UPIS" />  UPIS
+          <br />
+          <input name="checkbox[]" type="checkbox" value="SSEIS" />  SSEIS
+          </form>
         </div>
         <p> </p>
        
@@ -152,47 +152,34 @@
         <p> </p>
         
     
-			
-            <div class="col-sm-12">
-			<br> <br>
-			       
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-				
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="DGE-tab" data-bs-toggle="tab"
-                            data-bs-target="#DGE" type="button" role="tab" aria-controls="DGE"
-                            aria-selected="true">DGE</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="DEAE-tab" data-bs-toggle="tab" data-bs-target="#DEAE"
-                            type="button" role="tab" aria-controls="DEAE"
-                            aria-selected="false">DEAE</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="DSE-tab" data-bs-toggle="tab" data-bs-target="#DSE"
-                            type="button" role="tab" aria-controls="DSE" aria-selected="false">DSE</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="UPIS-tab" data-bs-toggle="tab" data-bs-target="#UPIS"
-                            type="button" role="tab" aria-controls="UPIS"
-                            aria-selected="false">UPIS</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="SSEIS-tab" data-bs-toggle="tab" data-bs-target="#SSEIS"
-                            type="button" role="tab" aria-controls="SSEIS" aria-selected="false">SSEIS</button>
-                    </li>
-					
-                </ul>
-             
-                <br><br><br>
+        <div class="container mt-3">
+  <br>
+  <!-- Nav pills -->
+  <ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#home">DGE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#menu1">DEAE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#menu2">DSE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#menu3">UPIS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#menu4">SSEIS</a>
+    </li>
+  </ul>
 
-                <div class="tab-content p-5 border border-2" style="height: center;" id="myTabContent">
-				
-                <div class="tab-pane fade show active" id="DGE" role="tabpanel"
-                            aria-labelledby="DGE-tab">
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+    
+
                             <div class="row" style="text-indent: 6px;">
-                  
-                            <div class="row mb-7" id="consulta">
+                            <div class="row mb-7" id="home">
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
@@ -201,10 +188,11 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID1</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
+ 
  <?php     
      $resultado=mysqli_query($conexion, $tabla);
         while($row=mysqli_fetch_assoc($resultado)) 
@@ -214,79 +202,32 @@
                                    <td><?php echo $row["no_asunto"]?> </td>
                                    <td><?php echo $row["prioridad"]?></td>
                                   <td><?php echo $row["fecha_limite"]?></td>
-                                  <td><?php echo $row["cve_status"]?></td>
+                                  <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["id_area"]?></td>
+                                  <td><?php echo $row["siglas_a"]?></td>
                                   <td>
                                  <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
-                                 
-                            
+                                 <?php
+            } mysqli_free_result($resultado);
+?>               
+        
                                  </tbody>
                                   </table>
                                    </div>
                               </div>
                         
                     </div>  
-                    <?php
-            } mysqli_free_result($resultado);
-?>               
-        
-                      
+                    
+    </div>
 
-                    <div class="tab-pane fade" id="DEAE" role="tabpanel"
-                            aria-labelledby="DEAE-tab">
+    <div id="menu1" class="container tab-pane fade"><br>
+    
                             <div class="row" style="text-indent: 6px;">
                     
-                              <div class="row mb-3" id="consulta">
-                                <table class="table">
-                                 <thead class="table-light" align="center">
-                                 <tr>
-                                  <th scope="col">Asunto</th>
-                                 <th scope="col">Prioridad</th>
-                                 <th scope="col">Fecha Limite</th>
-                                 <th scope="col">Status</th>
-                                 <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID2</th>
-                                 </tr>
-                                 </thead>
-                                 <tbody>
- <?php     
-     $resultado=mysqli_query($conexion, $tabla);
-        while($row=mysqli_fetch_assoc($resultado)) 
-        {
-?>
-                                  <tr align="center">
-                                   <td><?php echo $row["no_asunto"]?> </td>
-                                   <td><?php echo $row["prioridad"]?></td>
-                                  <td><?php echo $row["fecha_limite"]?></td>
-                                  <td><?php echo $row["cve_status"]?></td>
-                                  <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["id_area"]?></td>
-                                  <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
-                                 </td>
-                                 </tr>
-                                 
-                            
-                                 </tbody>
-                                  </table>
-                                   </div>
-                              </div>
-                        
-                    </div>  
-                    <?php
-            } mysqli_free_result($resultado);
-?>               
-        
-        <div class="tab-pane fade" id="DSE" role="tabpanel"
-                         aria-labelledby="DSE-tab">
-                         <div class="row" style="text-indent: 6px;">
-                 
-                          <div class="row mb-3" id="consulta">
+    <div class="row mb-7" id="menu1">
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
@@ -295,10 +236,11 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID3</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
+ 
  <?php     
      $resultado=mysqli_query($conexion, $tabla);
         while($row=mysqli_fetch_assoc($resultado)) 
@@ -308,44 +250,39 @@
                                    <td><?php echo $row["no_asunto"]?> </td>
                                    <td><?php echo $row["prioridad"]?></td>
                                   <td><?php echo $row["fecha_limite"]?></td>
-                                  <td><?php echo $row["cve_status"]?></td>
+                                  <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["id_area"]?></td>
+                                  <td><?php echo $row["siglas_a"]?></td>
                                   <td>
                                  <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
-                                 
-                            
+                                 <?php
+            } mysqli_free_result($resultado);
+?>   
                                  </tbody>
                                   </table>
                                    </div>
                               </div>
                         
                     </div>  
-                    <?php
-            } mysqli_free_result($resultado);
-?>               
-        
-
-        <div class="tab-pane fade" id="UPIS" role="tabpanel"
-                      aria-labelledby="UPIS-tab">
-                      <div class="row" style="text-indent: 6px;">
-
-                        <div class="row mb-3" id="consulta">
-                          <table class="table">
-                           <thead class="table-light" align="center">
-                           <tr>
+                        
+    <div id="menu2" class="container tab-pane fade"><br>
+    <div class="row mb-7" id="menu2">
+                            <table class="table">
+                             <thead class="table-light" align="center">
+                             <tr>
                                   <th scope="col">Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID4</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
+ 
  <?php     
      $resultado=mysqli_query($conexion, $tabla);
         while($row=mysqli_fetch_assoc($resultado)) 
@@ -355,45 +292,38 @@
                                    <td><?php echo $row["no_asunto"]?> </td>
                                    <td><?php echo $row["prioridad"]?></td>
                                   <td><?php echo $row["fecha_limite"]?></td>
-                                  <td><?php echo $row["cve_status"]?></td>
+                                  <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["id_area"]?></td>
+                                  <td><?php echo $row["siglas_a"]?></td>
                                   <td>
                                  <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
-                                 
-                            
+                                 <?php
+            } mysqli_free_result($resultado);
+?>        
                                  </tbody>
                                   </table>
                                    </div>
-                              </div>
-                        
-                    </div>  
-                    <?php
-            } mysqli_free_result($resultado);
-?>               
-        
-                  
-      
-        <div class="tab-pane fade" id="SSEIS" role="tabpanel"
-                   aria-labelledby="SSEIS-tab">
-                   <div class="row" style="text-indent: 6px;">
-           
-                    <div class="row mb-3" id="consulta">
-                      <table class="table">
-                       <thead class="table-light" align="center">
-                       <tr>
+                                   </div>
+
+                              
+    <div id="menu3" class="container tab-pane fade"><br>
+                            <div class="row mb-7" id="menu3">
+                            <table class="table">
+                             <thead class="table-light" align="center">
+                             <tr>
                                   <th scope="col">Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">ID5</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
+ 
  <?php     
      $resultado=mysqli_query($conexion, $tabla);
         while($row=mysqli_fetch_assoc($resultado)) 
@@ -403,34 +333,62 @@
                                    <td><?php echo $row["no_asunto"]?> </td>
                                    <td><?php echo $row["prioridad"]?></td>
                                   <td><?php echo $row["fecha_limite"]?></td>
-                                  <td><?php echo $row["cve_status"]?></td>
+                                  <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["id_area"]?></td>
+                                  <td><?php echo $row["siglas_a"]?></td>
                                   <td>
                                  <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
-                                 
-                            
+                                 <?php
+            } mysqli_free_result($resultado);
+?>          
                                  </tbody>
                                   </table>
                                    </div>
-                              </div>
-                        
-                    </div>  
-                    <?php
+                             
+
+    <div id="menu4" class="container tab-pane fade"><br>
+                            <div class="row mb-7" id="menu4">
+                            <table class="table">
+                             <thead class="table-light" align="center">
+                             <tr>
+                                  <th scope="col">Asunto</th>
+                                 <th scope="col">Prioridad</th>
+                                 <th scope="col">Fecha Limite</th>
+                                 <th scope="col">Status</th>
+                                 <th scope="col">Fecha de respuesta</th>
+                                 <th scope="col">Area</th>
+                                 </tr>
+                                 </thead>
+                                 <tbody>
+ 
+ <?php     
+     $resultado=mysqli_query($conexion, $tabla);
+        while($row=mysqli_fetch_assoc($resultado)) 
+        {
+?>
+                                  <tr align="center">
+                                   <td><?php echo $row["no_asunto"]?> </td>
+                                   <td><?php echo $row["prioridad"]?></td>
+                                  <td><?php echo $row["fecha_limite"]?></td>
+                                  <td><?php echo $row["status"]?></td>
+                                  <td><?php echo $row["fecha_respuesta"]?></td>
+                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td>
+                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
+                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                 </td>
+                                 </tr>
+                                 <?php
             } mysqli_free_result($resultado);
-?>               
+?>                
+                                 </tbody>
+                                  </table>
+                                   </div>
         
-              
-    
-   
-
-
-            
-    
-              
+                 
 
   </div>
     <script src="js/jquery-3.6.0.min.js"></script>

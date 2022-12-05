@@ -16,7 +16,7 @@ $nivel = $_POST['nivel'];
 
 insertar($nombre, $usuario, $contrasena, $aPaterno, $aMaterno, $cargo, $nivel); //se llama la funcion insertar
 
-    function insertar($nombre, $usuario, $contrasena, $apellidop, $apellidom, $cargo, $nivel) //creacion de la funcion insertar
+    function insertar($nombre, $usuario, $contrasena, $aPaterno, $aMaterno, $cargo, $nivel) //creacion de la funcion insertar
     {
         global $conexion; //tomamos la variable del archivo conexion
 

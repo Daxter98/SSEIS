@@ -143,7 +143,7 @@
         {
 ?>
             <tr align="center">
-             <td><?php echo $row["nombre"]?></td>
+             <td><?php echo $row["nombre"]?> <?php echo $row["aPaterno"]?> <?php echo $row["aMaterno"]?></td>
              <td><?php echo $row["usuario"]?></td>
             <td><?php echo $row["cargo"]?></td>
             <td><?php echo $row["nivel"]?></td>
