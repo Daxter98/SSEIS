@@ -206,8 +206,8 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.php">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminar_asunto.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                 <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
+                                 <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
@@ -254,8 +254,8 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                  <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
+                                  <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
@@ -296,8 +296,8 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                  <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
+                                  <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
@@ -337,8 +337,8 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                  <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
+                                  <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
@@ -377,16 +377,20 @@
                                   <td><?php echo $row["fecha_respuesta"]?></td>
                                   <td><?php echo $row["siglas_a"]?></td>
                                   <td>
-                                 <a href="modificar_asunto.html">"><button type="button" class="fas fa-edit"></button></a> 
-                                 <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+                                  <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
+                                 <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
                                  </td>
                                  </tr>
                                  <?php
             } mysqli_free_result($resultado);
 ?>                
                                  </tbody>
-                                  </table>
-                                   </div>
+            </table>
+             </div>
+             <script src="confirmacion.js">
+        
+        </script>
+
   </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

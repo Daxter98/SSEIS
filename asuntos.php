@@ -4,15 +4,6 @@ include("conexion.php");
 //nombre de la base de datos para seleccionar la base
 $basededatos="sseis";
 $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
-//valores obtenidos del archivo formulario
-//$link = mysqli_connect("localhost", "root", "");
-//if($link){
-  //  mysqli_select_db($link, "sseis");}
-//$checkbox=$_POST['checkbox'];
-   // foreach($checkbox as $llave){
-        //$ficha2="INSERT INTO asuntos_pendientes SET siglas_a='$llave'";
-       // $ejecutar_insertar_ficha2=mysqli_query($link, $ficha2); }
-
 $no_asunto = $_POST['no_asunto'];
 $siglas_a = $_POST['siglas_a'];
 $descripcion = $_POST['descripcion'];

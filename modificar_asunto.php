@@ -5,7 +5,10 @@
    // global $conexion;
     $base="sseis";
     $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
-    $tabla= "SELECT * FROM asuntos_pendientes";
+    $no_asunto= $_GET['no_asunto'];
+    $modificar= "SELECT * FROM asuntos_pendientes WHERE no_asunto = '$no_asunto'";
+    $ejecutar= $conexion->query($modificar);
+    $dato= $ejecutar->fetch_array();
 ?>
 <head>
     <meta charset="UTF-8">
@@ -39,22 +42,14 @@
     </div>
     <br><br>
 
-    <form action="asuntos_pendientes.html" id="formulario" method="POST">
+    <form action="modificar_asun.php" id="formulario" method="POST">
     </header>
     <div class="row">
     <p> </p>
     <div  class="fw-bold">Introduce los siguientes datos:  </div>
-   
-    
-
-    <div class="container"></div>
-              <div class="col"  aria-label="Default select example" >
-                <div class="col-6 col-sm-3 fw-bold" >
-                <input type="no_asunto" class="form-control" name="no_asunto" id="no_asunto" placeholder="No. de Asunto">
-                
+    <div class=" row mb-3">
+                <input type="hidden" name="no_asunto" id="no_asunto" value="<?php echo $dato['no_asunto'] ?>">
             </div>
-          </div>
-      <p> </p>
     
       <div class="row align-items-start">
             <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" method="POST">
@@ -110,11 +105,11 @@
      </div>
     <p> </p>
     
-    </form>
+  
             <div class=" row mb-3">
                 <button type="submit" class="btn btn-primary">Guargar Cambios</button>
             </div>
-        </form>
+       
     
 </body>
 </html>
