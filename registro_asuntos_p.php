@@ -185,12 +185,12 @@
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
-                                  <th scope="col">Asunto</th>
+                                  <th scope="col">No. de Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Asunto</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -206,7 +206,7 @@
                                   <td><?php echo $row["fecha_limite"]?></td>
                                   <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td><?php echo $row["descripcion"]?></td>
                                   <td>
                                  <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
@@ -233,12 +233,12 @@
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
-                                  <th scope="col">Asunto</th>
+                                  <th scope="col">No. de Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Asunto</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -254,7 +254,7 @@
                                   <td><?php echo $row["fecha_limite"]?></td>
                                   <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td><?php echo $row["descripcion"]?></td>
                                   <td>
                                   <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
                                   <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
@@ -275,12 +275,12 @@
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
-                                  <th scope="col">Asunto</th>
+                                  <th scope="col">No. de Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Asunto</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -296,7 +296,7 @@
                                   <td><?php echo $row["fecha_limite"]?></td>
                                   <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td><?php echo $row["descripcion"]?></td>
                                   <td>
                                   <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
                                   <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
@@ -316,12 +316,12 @@
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
-                                  <th scope="col">Asunto</th>
+                                  <th scope="col">No. de Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Asunto</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -337,7 +337,7 @@
                                   <td><?php echo $row["fecha_limite"]?></td>
                                   <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td><?php echo $row["descripcion"]?></td>
                                   <td>
                                   <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
                                   <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
@@ -356,12 +356,12 @@
                             <table class="table">
                              <thead class="table-light" align="center">
                              <tr>
-                                  <th scope="col">Asunto</th>
+                                  <th scope="col">No. de Asunto</th>
                                  <th scope="col">Prioridad</th>
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area</th>
+                                 <th scope="col">Asunto</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -377,7 +377,7 @@
                                   <td><?php echo $row["fecha_limite"]?></td>
                                   <td><?php echo $row["status"]?></td>
                                   <td><?php echo $row["fecha_respuesta"]?></td>
-                                  <td><?php echo $row["siglas_a"]?></td>
+                                  <td><?php echo $row["descripcion"]?></td>
                                   <td>
                                   <a href="modificar_asunto.php?no_asunto=<?php echo $row["no_asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
                                  <a href="eliminar_asunto.php?no_asunto=<?php echo $row["no_asunto"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
