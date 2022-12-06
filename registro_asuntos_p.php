@@ -36,7 +36,7 @@
                 <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
             </div>
             <div class="col-9 d-flex justify-content-around align-items-center">
-                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narcisso Bassols"</h3>
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narciso Bassols"</h3>
             </div>
             <div class="col d-flex justify-content-around align-items-center">
                 <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
@@ -190,7 +190,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area 1</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -238,7 +238,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area2</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -280,7 +280,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area3</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -321,7 +321,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area4</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
@@ -361,7 +361,7 @@
                                  <th scope="col">Fecha Limite</th>
                                  <th scope="col">Status</th>
                                  <th scope="col">Fecha de respuesta</th>
-                                 <th scope="col">Area5</th>
+                                 <th scope="col">Area</th>
                                  </tr>
                                  </thead>
                                  <tbody>
