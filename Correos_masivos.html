@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Control SSEIS</title>
+</head>
+
+<body>
+    <div class="container p-4">
+        
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narciso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+        <br><br>
+
+        <div class="row">
+                
+			<div class="form" style="font-size:25px; display:flex; text-align:center">
+				<form action = "registrarC.php" method="post">
+				Introducir Boleta : &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
+				&nbsp;&nbsp; <input style ="font-size: 20px; text-align: center;font-family: impact; color:#0D47A1" type="submit" value="Buscar">
+				</div>
+
+			
+            <div class="col-5">
+			<br> <br>
+			       
+                
+                <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+				
+            
+                    <div class="tab-pane fade show active" id="generales" role="tabpanel"
+                        aria-labelledby="generales-tab">
+                        <div class="row" style="text-indent: 6px;">
+                            
+                            <div class="col-6 col-sm-3 fw-bold">Tutor</div>
+                            <div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">Nombre:</div>
+                            <div class="w-100"></div>
+							<div class="col-6 col-sm-3 fw-bold">Direccion:</div>
+							<div class="w-100"></div>
+                            <div class="col-6 col-sm-3 fw-bold">Correo:</div>
+                            <div class="w-100"></div>
+
+                            <div  class="fw-bold">Escribe tu correo aqui:  </div>
+       
+                             <div class="w-100"></div>
+                             </div>
+                            <div class="container"></div>
+                            <div class="col"  aria-label="Default select example" >
+                              <div class="col-6 col-sm-3 fw-bold" >
+                              <input type="Asunto" class="form-control" name="Asunto" id="Asunto" placeholder="Asunto">
+                              
+                          </div>
+                        </div>
+                        <p> </p>
+                        <form name="formulario" method="post" action="/send.php" enctype="multipart/form-data">
+                            <!-- ¡No olvides el enctype! -->
+                            <!-- Campo de selección de archivo -->
+                            <input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+                          </form>
+                          </div>  
+                    </div>
+                 </div>
+
+                    <div class="col-5">
+                        <br> <br>
+                        <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+                            <img class="img-fluid" width="50px" align="right" src="img/icons/foto_alumno.png">
+                        
+                            <div class="row" style="text-indent: 6px;">
+                                <div class="col-6 col-sm-3 fw-bold">BOLETA:</div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">NOMBRE:</div>
+                                <div class="w-100"></div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">CURP:</div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">SEXO:</div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">ESTADO INSCRIPCION:</div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">REPROBADAS:</div>
+                                <div class="col fw-normal"></div>
+                                <div class="w-100"></div>
+                                <div class="col-6 col-sm-3 fw-bold">% ACREDITADO:</div>
+                                <div class="col fw-normal"></div>
+                                
+                              </div>  
+                    </div>
+               
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
