@@ -3,8 +3,8 @@
 <?php
   include("conexion.php");
    // global $conexion;
-    $base="sseis";
-    $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+    //$base="sseis";
+    //$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
     $tablaDGE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DGE' ";
     $tablaDEAE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DEAE' ";
     $tablaDSE= "SELECT * FROM asuntos_pendientes WHERE siglas_a = 'DSE' ";
