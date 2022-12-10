@@ -65,7 +65,7 @@
             </tr>
             </thead>
             <tbody>
-           <!-- 
+           
             <?php   
             
             include("conexion.php");
@@ -79,7 +79,7 @@
             while($row=mysqli_fetch_assoc($resultado)) 
             {
              ?>   
-              -->
+            
 
              <tr align="center">
               <td><?php echo $row["folio"]?> </td>
@@ -97,11 +97,11 @@
             <a href="eliminar_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
             </td>
             </tr>
-            <!-- 
+            
             <?php
-            } mysqli_free_result($resultados);
+            } mysqli_free_result($resultado);
             ?> 
-            -->
+            
             </tbody></table>
         </div>
     </div>  
@@ -110,13 +110,12 @@
 <?php
             }   
             else{ 
-            $consulta= "SELECT * FROM correspondencia";
+                $consulta= "SELECT * FROM correspondencia";
             $resultado= $conexion->query($consulta);
             while($row=mysqli_fetch_assoc($resultado)) 
             {
              ?>   
             
-
              <tr align="center">
               <td><?php echo $row["folio"]?> </td>
               <td><?php echo $row["interno"]?></td>
@@ -135,7 +134,7 @@
             </tr>
             
             <?php
-            } mysqli_free_result($resultados);
+            } mysqli_free_result($resultado);
         }?> 
         
             </tbody>
