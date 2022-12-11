@@ -36,9 +36,10 @@
 
     <div class="form" style="font-size:25px; display:flex; text-align:center">
         <form method="GET">
-        Numero de Oficio: &nbsp;&nbsp;&nbsp; <input type= "number" name="no_oficio" id="no_oficio" placeholder="No Oficio">
-        &nbsp;&nbsp; <input style ="font-size: 20px; text-align: center;font-family: impact; color:#0D47A1" type="submit" value="Buscar" formmethod="GET">
-        </div>
+        &nbsp;&nbsp;&nbsp; Numero de Oficio: &nbsp;&nbsp;&nbsp; 
+        <input type= "number" name="no_oficio" id="no_oficio" placeholder="No Oficio">
+        &nbsp;&nbsp; <input class="btn btn-primary" type="submit" value="Buscar" formmethod="GET">
+        </div><br>
 
 <div class="tab-content p-5 border border-2" style="height: center;" id="myTabContent">
 				
@@ -85,15 +86,16 @@
               <td><?php echo $row["folio"]?> </td>
               <td><?php echo $row["interno"]?></td>
              <td><?php echo $row["no_oficio"]?></td>
+             <td><?php echo $row["fecha_oficio"]?></td>
              <td><?php echo $row["asunto"]?></td>
-             <td><?php echo $row["status"]?></td>
+             <td><?php echo $row["estatus"]?></td>
              <td><?php echo $row["detalle"]?></td>
              <td><?php echo $row["destinatario"]?></td>
              <td><?php echo $row["remitente"]?></td>
              <td><?php echo $row["fecha_recepcion"]?></td>
              <td><?php echo $row["turnado"]?></td>
              <td>
-            <a href="mod_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+             <a href="mod_corresp.php?folio=<?php echo $row["folio"] ?>&detalle=<?php echo $row["detalle"]?>&estatus=<?php echo $row["estatus"]?>&no_oficio=<?php echo $row["no_oficio"]?>&asunto=<?php echo $row["asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
             <a href="eliminar_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
             </td>
             </tr>
@@ -120,15 +122,16 @@
               <td><?php echo $row["folio"]?> </td>
               <td><?php echo $row["interno"]?></td>
              <td><?php echo $row["no_oficio"]?></td>
+             <td><?php echo $row["fecha_oficio"]?></td>
              <td><?php echo $row["asunto"]?></td>
-             <td><?php echo $row["status"]?></td>
+             <td><?php echo $row["estatus"]?></td>
              <td><?php echo $row["detalle"]?></td>
              <td><?php echo $row["destinatario"]?></td>
              <td><?php echo $row["remitente"]?></td>
              <td><?php echo $row["fecha_recepcion"]?></td>
              <td><?php echo $row["turnado"]?></td>
              <td>
-            <a href="mod_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-edit"></button></a> 
+            <a href="mod_corresp.php?folio=<?php echo $row["folio"] ?>&detalle=<?php echo $row["detalle"]?>&estatus=<?php echo $row["estatus"]?>&no_oficio=<?php echo $row["no_oficio"]?>&asunto=<?php echo $row["asunto"]?>"><button type="button" class="fas fa-edit"></button></a> 
             <a href="eliminar_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
             </td>
             </tr>
@@ -143,6 +146,7 @@
 
         </div>  
        </div>
+       <script src="confirmacion.js"></script>
 </div>
 
 <script src="js/jquery-3.6.0.min.js"></script>

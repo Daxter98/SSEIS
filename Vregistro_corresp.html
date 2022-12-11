@@ -16,6 +16,30 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Administrador || Control SSEIS</title>
 </head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .column {
+    float: right;
+    width: 50%;
+    padding: 10px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  div {
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width:auto;
+    height:auto;
+  }
+
+  </style>
 <body>
     <div class="container p-4">
         
@@ -32,32 +56,16 @@
         </div>
       </div>
 
-        <br><br>
         <form action="registro_corresp.php" method="POST">
         </header>
         <div class="row">
         <p> </p>
     </div>
     <div class="container">
-
+      <div class="tab-content p-4 border border-1">
+        
     <div  class="fw-bold">Introduce los datos para el Registro:   </div>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
 
-      .column {
-        float: right;
-        width: 50%;
-        padding: 10px;
-      }
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      </style>
       
 
             <div class="column"> 
@@ -65,7 +73,7 @@
             </div>
 
             <div class="column"> 
-              <input type="text" class="form-center" name="no_folio" id="no_folio" size="10" placeholder="No. Folio">
+              <input type="text" class="form-center" name="no_folio" id="no_folio" size="10" placeholder="No. de Oficio">
             </div>
         
             <div class="column">
@@ -107,7 +115,7 @@
             </div>
             
             <div class="column">
-              <label for="fecha_rec"> Fecha requerida de Recepción: </label>
+              <label for="fecha_rec"> Fecha Recepción: </label>
               <input type="date" id="fecha_rec" name="fecha_rec">
             </div>
            
@@ -121,8 +129,8 @@
               </div>
               <p> </p>
 
-            </div>
-
+            </div></div>
+</form>
                      
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

@@ -2,8 +2,8 @@
 //conexion con servidor y db
 include("conexion.php");
 //nombre de la base de datos para seleccionar la base
-$basededatos="sseis";
-$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+//$basededatos="sseis";
+//$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
 //valores obtenidos del archivo formulario
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
