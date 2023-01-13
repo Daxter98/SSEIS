@@ -1,4 +1,6 @@
 <?php 
+session_start();
+include "fuctions.php";
 //conexion con servidor y db
 //nombre de la base de datos para seleccionar la base
 //$basededatos="sseis";
