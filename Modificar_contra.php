@@ -18,13 +18,13 @@
                 $pass1 = md5 ($pass1);
                 $pass2 = md5 ($pass2);
 
-                $sqlA = $mysqli -> query("SELECT password FROM users WHERE ID = '".$_SESION ['id]."'")
+                $sqlA = $mysqli -> query("SELECT password FROM users WHERE ID = '".$_SESION ['id']."'");
                 $rowA = $sqlA->fetch_array();
 
                 if($rowA['pasword'] == $passActual) {
 
                     if($pass1 == $pass2) {
-                        $update = $mysql->query("UPDATE users SET password= '$pass1' WHERE id = '".$_SESION ['id]."'")
+                        $update = $mysql->query("UPDATE users SET password= '$pass1' WHERE id = '".$_SESSION['id']."'");
                         if($update) {echo "se ha actualizado tu contraseña";}
                     }
                     else {
