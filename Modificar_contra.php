@@ -1,5 +1,9 @@
 <?php 
+
 session_start();
+if(isset($_SESSION['hola']) && $_SESSION ['hola'] == FALSE ) {
+    header ("Location: index.html");
+}
 include "fuctions.php";
 //conexion con servidor y db
 //nombre de la base de datos para seleccionar la base
