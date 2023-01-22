@@ -54,7 +54,11 @@ switch($_GET["op"]){
             
             $sql="
             INSERT INTO citatorios(folio_inc,boleta,no_cita,fecha_generada,fecha_cita,hora,area_cita, persona_atiende)
-            VALUES ('$folio_inc','$boleta3', '$no_cita','$fecha_generada', '$fecha_cita', '$hora_cita', '$area_cita', '$persona_atiende') ";
+            VALUES ('$folio_inc','$boleta3', '$no_cita','$fecha_generada', '$fecha_cita', '$hora_cita', '$area_cita', '$persona_atiende');
+            
+            UPDATE incidencias
+            SET citatorio= 1
+            WHERE folio_inc= '$folio_inc';";
             $resultado = $conexion->query($sql);
             $output["folio"] = $folio_inc;
             $output["no_cita"] = $no_cita;
