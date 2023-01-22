@@ -20,7 +20,7 @@ $turnado=$_POST['turnado'];
     try {
         
         
-        $sql=mysqli_query($conexion,"INSERT INTO correspondencia(interno,no_oficio,fecha_oficio,asunto,estatus,detalle,destinatario,remitente,fecha_recepcion,turnado) VALUES ('$interno', '$no_folio', '$fecha_of', '$asunto', '$status', '$detalle', '$dest', '$rem', '$fechaRec', '$turnado') ");
+        $sql=mysqli_query($conexion,"INSERT INTO correspondencia(interno,no_oficio,fecha_oficio,asunto,status,detalle,destinatario,remitente,fecha_recepcion,turnado) VALUES ('$interno', '$no_folio', '$fecha_of', '$asunto', '$status', '$detalle', '$dest', '$rem', '$fechaRec', '$turnado') ");
         
         header('location: Seguimiento.php');
 

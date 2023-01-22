@@ -3,7 +3,7 @@ include("conexion.php");
 
 $folio = $_GET['folio'];
 $detalle1 = $_GET['detalle'];
-$estatus1 = $_GET['estatus'];
+$estatus1 = $_GET['status'];
 $no_of = $_GET['no_oficio'];
 $asun = $_GET['asunto'];
 
@@ -11,7 +11,7 @@ $asun = $_GET['asunto'];
 function Modificar_Corresp($conn,$fol,$stM,$detM)
 {
 
-    $modifica= "UPDATE correspondencia SET estatus='$stM', detalle='$detM' WHERE folio='$fol'";
+    $modifica= "UPDATE correspondencia SET status='$stM', detalle='$detM' WHERE folio='$fol'";
     $resultado= mysqli_query($conn, $modifica);
     if($resultado){
         header("location:seguimiento.php");

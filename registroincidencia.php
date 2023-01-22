@@ -1,87 +1,99 @@
 <?php
 
-include("conexion.php");
+include("./conexion.php");
 
-$Cicloinc= $_POST['Cicloinc'];
-$datosinc=$_POST['datosinc'];
-$aliasinc=$_POST['aliasinc'];
-$grupoinc=$_POST['grupoinc'];
-$fecha_inc=$_POST['fecha_inc'];
-$folio_inc=$_POST['folio_inc'];
-$observacioninc=$_POST['observacioninc'];
-$horainc=$_POST['horainc'];
-$personainc=$_POST['personainc'];
-$temainc=$_POST['temainc'];
-
-
-
-//MODIFICAR CAMPOS DE DATOS, SON ERRÓNEOS
-    try {
-        
-        $sql=mysqli_query($conexion,"INSERT INTO inc VALUES ('', '$Cicloinc', '$datosinc', '$aliasinc', '$grupoinc', '$fecha_inc', '$folio_inc', '$observacioninc', '$horainc', '$personainc', '$temainc') ");
-        
-        $consulta= "SELECT * FROM inc";
-        $resultado= $conexion->query($consulta);
-
-        echo "<html>
-        <head>
-    <meta charset='UTF-8'>
-    <!-- Viewport -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <!-- Favicon -->
-  <link rel='icon' type='favicon/x-icon' href='img/logos/IPN.png'/>
-  <!-- CSS -->
-  <link rel='stylesheet' href='css/main.css'>
-  <!-- Iconos de Font Awesome -->
-  <link rel='stylesheet' href='css/all.min.css'>
-  <!-- Styles SweetAlert -->
-  <link rel='stylesheet' href='css/sweetalert2.min.css'>
-  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <title>Administrador || Control SSEIS</title>
-</head>
-
-              <div class='tab-content p-5 border border-2' style='height: center;' id='myTabContent'>
-                <div class='row mb-2' id='consulta'>
-                   <table class='table'>
-                    <thead class='table-light' align='center>
-                    <tr>
-                    <th></th>
-                    <th scope='col'>Folio</th>
-                    <th scope='col'>Interno</th>
-                    <th scope='col'>No. Of.</th>
-                    <th scope='col'>Fecha Of.</th>
-                    <th scope='col'>Asunto</th>
-                    <th scope='col'>Estatus</th>
-                    <th scope='col'>Detalle</th>
-                    <th scope='col'>Dest.</th>
-                    <th scope='col'>Rem.</th>
-                    <th scope='col'>Fecha Recep.</th>
-                    <th scope='col'>Turnado</th>
-                    </tr>
-                    
-                    </thead>";
-                      
-
-        while($rowdos = $resultado->fetch_assoc()) { 
-                      echo "<tbody>  <tr align='center'>";
-                      echo "<td>".$rowdos['Cicloinc']."</td>";
-                      echo "<td>".$rowdos['datosinc']."</td>";
-                      echo "<td>".$rowdos['aliasinc']."</td>";
-                      echo "<td>".$rowdos["grupoinc"]."</td>";
-                      echo "<td>".$rowdos['fecha_inc']."</td>";
-                      echo "<td>".$rowdos['folio_inc']."</td>";
-                      echo "<td>".$rowdos['observacioninc']."</td>";
-                      echo "<td>".$rowdos['horainc']."</td>";
-                      echo "<td>".$rowdos['personainc']."</td>";
-                      echo "<td>".$rowdos['temainc']."</td>
-                      <td>
-    <a href='ss'><button type='button' class='fas fa-trash-alt'></button></a>
-    </td>"; 
-}
-    echo "</tr> </tbody></table></div></div> </html>";
-    } catch (Exception $e) {
-        print "¡Error BD!: " . $e->getMessage() . "<br/>";
-        die();
-    }
+switch($_GET["op"]){
     
+    case "get_alumno":
+        $boleta = $_POST['boleta'];
+            $sql="SELECT nombres, a_materno, a_paterno FROM alumno WHERE boleta= '$boleta'";
+            $resultado= $conexion->query($sql);
+            $row=mysqli_fetch_assoc($resultado);
+            echo "<option>".$row['nombres']." ".$row['a_materno']." ".$row['a_paterno']."</option>";
+        break;
+
+    case "registra_incidencia":
+        $boleta1= $_POST['boleta'];
+        $cveincidencia=$_POST['temainc'];
+        $ciclo=$_POST['ciclo'];
+        $fecha_inc=$_POST['fecha_inc'];
+        $hora=$_POST['hora'];
+        $hecho=$_POST['hecho'];
+        $citatorio= 0;
+        $persona_reporta=$_POST['persona_reporta'];
+        $observacion=$_POST['observacion'];
+
+        try {
+            
+            $sql="
+            INSERT INTO incidencias(boleta,cve_incidencia,ciclo,fecha_reporte,hora,hecho,citatorio,quien_reporto,observacion)
+            VALUES ('$boleta1', '$cveincidencia', '$ciclo', '$fecha_inc', '$hora', '$hecho', '$citatorio', '$persona_reporta', '$observacion') ";
+            $resultado = $conexion->query($sql);
+            echo json_encode($boleta1);
+    
+        } catch (Exception $e) {
+            print "¡Error BD!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+       
+    break;
+
+    case "citatorio":
+        
+        $folio_inc=$_POST['folio_inc'];
+        $boleta3=$_POST['boleta_al'];
+        $no_cita= $_POST['no_cita'];
+        $fecha_generada=$_POST['fecha_generada'];
+        $fecha_cita=$_POST['fecha_cita'];
+        $hora_cita=$_POST['hora_citat'];
+        $area_cita=$_POST['area'];
+        $persona_atiende=$_POST['persona_atiende'];
+
+
+        try {
+            
+            $sql="
+            INSERT INTO citatorios(folio_inc,boleta,no_cita,fecha_generada,fecha_cita,hora,area_cita, persona_atiende)
+            VALUES ('$folio_inc','$boleta3', '$no_cita','$fecha_generada', '$fecha_cita', '$hora_cita', '$area_cita', '$persona_atiende') ";
+            $resultado = $conexion->query($sql);
+            $output["folio"] = $folio_inc;
+            $output["no_cita"] = $no_cita;
+            $output["boleta"] = $boleta3;
+            $output["fechag"] = $fecha_generada;
+            $output["fechac"] = $fecha_cita;
+            $output["horac"] = $hora_cita;
+            $output["areac"] = $area_cita;
+            $output["persona"] = $persona_atiende;
+            echo json_encode($output);
+            
+        } catch (Exception $e) {
+            print "¡Error BD!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+       
+    break;
+
+    case "get_no_cita":
+
+        $boleta2 =$_POST['boleta_al'];
+        try {
+            
+            $sql="
+            SELECT COUNT(boleta)+1 AS num_cita FROM citatorios WHERE boleta= '$boleta2'";
+            $resultado = $conexion->query($sql);
+            $row= $resultado-> fetch_assoc(); 
+            $output["ncita"]= $row['num_cita'];
+            $output["boleta"]= $boleta2;
+            echo json_encode($output);
+    
+        } catch (Exception $e) {
+            print "¡Error BD!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+       
+    break;
+
+
+}
+   
  ?>
