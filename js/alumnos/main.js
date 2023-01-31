@@ -6,16 +6,14 @@ $(document).ready(() => {
         let route = $("#formBusqueda").attr('action');
         let formData = $("#formBusqueda").serializeArray();
 
-        console.log(formData);
-
-        console.log(route); 
-
         $.ajax({
             type: "POST",
             url: route,
             data: formData,
             success: function(response){
-                $("#boleta").html(response.boleta);
+                let result = JSON.parse(response);
+
+                $("#boleta").html(result.boleta);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){
 

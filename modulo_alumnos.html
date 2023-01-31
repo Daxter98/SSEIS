@@ -37,20 +37,10 @@
         <div class="row">
                 
 			<div class="form" style="font-size:25px; display:flex; text-align:center">
-				<form action = "registrarC.php" method="post">
+				<form action = "buscar.php" method="post" id="formBusqueda">
 				Boleta de Alumno: &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
-				&nbsp;&nbsp;&nbsp;<input class="btn btn-primary" type="submit" value="Buscar" formmethod="GET"> 
-				</div>
-
-            <div class="form" style="font-size:25px; display:flex; text-align:center">
-                <form action="alumnos/buscar.php" method="post" id="formBusqueda">
-                    Boleta de Alumno: &nbsp;&nbsp;&nbsp; <input type="number" name="boleta" placeholder="Boleta">
-                    &nbsp;&nbsp; <input id="btnBusqueda" style="font-size: 20px; text-align: center;font-family: impact; color:#0D47A1"
-                        type="submit" value="Buscar">
-                </form>
+				&nbsp;&nbsp;&nbsp;<input class="btn btn-primary" id="btnBusqueda" type="submit" value="Buscar" formmethod="post"> 
             </div>
-
-
             <div class="col-8">
                 <br> 
                 <br>
