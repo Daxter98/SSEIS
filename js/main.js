@@ -1,4 +1,5 @@
-$(document).ready(() => {
+$(document).ready(() => 
+{
     $('#btnLogin').on('click', function(e) {
       
       e.preventDefault();
@@ -22,6 +23,9 @@ $(document).ready(() => {
           result = JSON.parse(response);
 
           if(result.ok){
+            // Current user via sessionStorage
+            sessionStorage.setItem("user", JSON.stringify(result.user));
+            
             location.href = 'vista_administrador.html';
           }else{
             Swal.fire({

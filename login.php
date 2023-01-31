@@ -8,8 +8,9 @@ $sql = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$us' AND 
 $filas = mysqli_num_rows($sql);
 if ($filas > 0) 
 {
+    $user = $sql->fetch_assoc();
     //header('location: vista_administrador.html');
-    echo json_encode(array('ok'=> 1));
+    echo json_encode(array('ok'=> 1, 'user'=>$user));
 } 
 else 
 {
