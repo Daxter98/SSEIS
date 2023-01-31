@@ -5,7 +5,7 @@ include 'conexion.php';
 $us = $_POST['us'];
 $con = $_POST['con'];
 
-$sql = mysqli_query($conn, "SELECT * FROM usuarios WHERE usuario ='$us' AND contrasena ='$con'");
+$sql = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario ='$us' AND contrasena ='$con'");
 $filas = mysqli_num_rows($sql);
 if ($filas > 0) 
 {
@@ -18,5 +18,5 @@ else
     echo json_encode(array('ok'=> 0));
 }
 
-$conn->close()
+$conexion->close()
 ?>
