@@ -3,8 +3,8 @@
 <?php
   include("conexion.php");
    // global $conexion;
-    $base="sseis";
-    $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+    //$base="sseis";
+    //$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
     $no_asunto= $_GET['no_asunto'];
     $modificar= "SELECT * FROM asuntos_pendientes WHERE no_asunto = '$no_asunto'";
     $ejecutar= $conexion->query($modificar);

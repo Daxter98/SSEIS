@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon -->
-    <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- Iconos de Font Awesome -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <!-- Styles SweetAlert -->
-    <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Administrador || Control SSEIS</title>
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Administrador || Conrol SSEIS</title>
 </head>
 
 <body>
@@ -35,6 +35,12 @@
         <br><br>
 
         <div class="row">
+                
+			<div class="form" style="font-size:25px; display:flex; text-align:center">
+				<form action = "registrarC.php" method="post">
+				Boleta de Alumno: &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
+				&nbsp;&nbsp;&nbsp;<input class="btn btn-primary" type="submit" value="Buscar" formmethod="GET"> 
+				</div>
 
             <div class="form" style="font-size:25px; display:flex; text-align:center">
                 <form action="alumnos/buscar.php" method="post" id="formBusqueda">

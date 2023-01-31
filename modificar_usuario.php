@@ -3,8 +3,8 @@
 include("conexion.php");
 //include("vista_agenda.php");
 //nombre de la base de datos para seleccionar la base
-$basededatos="sseis";
-$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+//$basededatos="sseis";
+//$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
 //valores obtenidos del archivo formulario
 
 $id = $_POST['id'];

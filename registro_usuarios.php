@@ -3,8 +3,8 @@
 <?php
   include("conexion.php");
    // global $conexion;
-    $base="sseis";
-    $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+    //$base="sseis";
+    //$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
     $tabla= "SELECT * FROM usuarios";
 ?>
 <head>
@@ -23,9 +23,6 @@
   <title>Administrador || Control SSEIS</title>
 </head>
 <body>
-<form action="usuarios.php" id="formulario" method="POST">
-    <div class="container p-4">
-        
 		<div class="row">
             <div class="col d-flex justify-content-around align-items-center">
                 <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
@@ -38,6 +35,9 @@
             </div>
         </div>
         <br><br>
+        <form action="usuarios.php" id="formulario" method="POST">
+    <div class="container p-4">
+      <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
 
                   <div class="row">
                     <p> </p>
@@ -123,7 +123,7 @@
           <div class="col-6">
             <button type="submit" class="btn btn-primary">Registrar</button>
             </div>
-            <p> </p>
+            <p> </p></div>
             </form>
 
          <div class="row mb-3" id="consulta">

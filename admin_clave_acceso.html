@@ -35,19 +35,24 @@
             <div class="col-6 col-md-6 d-flex align-items-center"></div>
             <div  class="fw text-justify">Modifique su contraseña a una cadena de caracteres de 8 a 12 caracteres. Es necesario incluir en su nueva contraseña por lo menos una letra mayúscula, una minúscula, y un número.</div>
             <div class="form-select-col-11 form-select-sm" aria-label=".form-select-sm example"></div>
+        
             <br><br>
+            <form action="" method="post">
+
+            
+
             <center>
                 <table>
                     <tr>
-                    <label>Contraseña actual:  <input type="text">
+                    <label>Contraseña actual:  <input type="password" name="passActual" autocomplete="off">
                     </tr>
                     <p> </p>
                     <tr>
-                     <label>Contraseña nueva:  <input type="text">
+                     <label>Contraseña nueva:  <input type="password" name="pass1" autocomplete="off">
                     </tr>
                     <p> </p>
                     <tr>
-                    <label>Confirmar contraseña:  <input type="text">
+                    <label>Confirmar contraseña:  <input type="password" name="pass2" autocomplete="off">
                     </tr>
                     <p> </p>
 
@@ -59,10 +64,10 @@
                     <p> </p>
                      
                     <tr>
-                     <input type="button"  onclick="validar()" value="Cambiar contraseña">
+                     <input type="button"  onclick="validar()" value="Cambiar contraseña" name="editar"> 
                     </tr>
-                    
-         
+                </table>
+         </form>
 
    
         </div>

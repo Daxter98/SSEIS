@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div class="container p-4">
+    <div class="container p-2">
         
 		<div class="row">
             <div class="col d-flex justify-content-around align-items-center">
@@ -36,13 +36,13 @@
         <div class="row">
                 
 			<div class="form" style="font-size:25px; display:flex; text-align:center">
-				<form action = "registrarC.php" method="post">
-				Introducir Boleta : &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
-				&nbsp;&nbsp; <input style ="font-size: 20px; text-align: center;font-family: impact; color:#0D47A1" type="submit" value="Buscar">
+				<form action = "------------" method="post">
+				Boleta de Alumno: &nbsp;&nbsp;&nbsp; <input type= "number" name="boleta" placeholder="Boleta">
+				<input class="btn btn-primary" type="submit" value="Buscar" formmethod="GET">
 				</div>
 
 			
-            <div class="col-5">
+            <div class="col-6">
 			<br> <br>
 			       
                 
@@ -68,8 +68,10 @@
                              </div>
                             <div class="container"></div>
                             <div class="col"  aria-label="Default select example" >
-                              <div class="col-6 col-sm-3 fw-bold" >
+                              <div class="col-8 col-sm-12 fw-bold" >
                               <input type="Asunto" class="form-control" name="Asunto" id="Asunto" placeholder="Asunto">
+                              <div class="col-8 col-sm-12 fw-bold" ></div>
+
                               
                           </div>
                         </div>
@@ -80,10 +82,18 @@
                             <input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
                           </form>
                           </div>  
+                          <p> </p>
+                          <form name="formulario" method="post" action="/send.php">
+                        
+                            <!-- Botón de envío de envio -->
+                            <div class="form" style="font-size:15px; display:flex; text-align:center">
+                            <a href="#" style="color: #fff; background-color: #75003E; padding:5px; border-radius: 10px;">Enviar</a> 
+                          </form>
+                        </div>
                     </div>
                  </div>
 
-                    <div class="col-5">
+                    <div class="col-6">
                         <br> <br>
                         <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
                             <img class="img-fluid" width="50px" align="right" src="img/icons/foto_alumno.png">
