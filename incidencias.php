@@ -22,7 +22,7 @@ $row= mysqli_fetch_array($resultado);
   <!-- Styles SweetAlert -->
   <link rel="stylesheet" href="./css/sweetalert2.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Administrador || Control SSEIS</title>
+  <title> Control SSEIS</title>
 </head>
 <body>
     <div class="container p-4">

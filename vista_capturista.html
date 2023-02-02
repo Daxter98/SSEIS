@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Viewport -->
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Iconos de Font Awesome -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Styles SweetAlert -->
+  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Capturista || Control SSEIS</title>
+</head>
+
+<body onload="onLoad()">
+  <header>
+    <div class="container-fluid">
+      <div class="row bg-primary">
+        <div class="col-sm-12 col-md d-flex justify-content-around align-items-center p-3">
+          <a id="ipn" href="https://www.ipn.mx/"><img class="img-fluid" width="70px"
+              src="img/logos/logo-poli-blanco.png" alt="IPN"></a>
+
+          <h1 class="text-white mx-5 text-center" style="font-size:400%">SSEIS</h1>
+
+          <a id="voca8" href="https://www.cecyt8.ipn.mx/"><img class="img-fluid" width="90px"
+              src="img/logos/logovoca.png" alt="cecyt8"></a>
+        </div>
+      </div>
+
+      <div class="row py-3 px-1 bg-primary-dark">
+        <div class="col-12 col-lg-7 offset-lg-5">
+          <a href="index.html">
+            <h3 style="font-size:120%; color:white; float:right"> Salir
+              <span class="fas fa-door-open"></span>
+            </h3>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper d-flex align-items-stretch">
+
+      <nav id="sidebar" class="active">
+        <h1><a href="index.html" class="logo">CAP.</a></h1>
+
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <!--Lo que hay que hacer es agrupar los links en divs para que sea mas facil ocultar-->
+            <div id="controlAlumnos">
+              <a href="modulo_alumnos.html" target="formulario">
+                <span class="fa fa-users"></span>
+                Alumnos
+              </a>
+              <tr>
+                <td style="white-space:nowrap;width:100%;">
+                  <a class="item" href="cargar_alumnos.html" target="formulario"
+                    style="border-style:none;font-size:1em;margin-left:1px;">Cargar alumnos</a>
+                </td>
+              </tr>
+            </div>
+            <!--Algo como esto!-->
+            <!--    <span class="fas fa-envelope-open-text" style="border-style:none;font-size:2em;margin-left:6px;" ></span> 
+          <td style="border-style:none;font-size:5em;margin-left:40px;">Correspondencia </td>
+           -->
+            <a target="formulario">
+              <span class="fas fa-envelope-open-text"></span>Correspondencia</a>
+
+            <tr>
+              <td style="white-space:nowrap;width:100%;">
+                <a class="item" href="vregistro_corresp.html" target="formulario"
+                  style="border-style:none;font-size:1em;margin-left:1px;">Registro</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="white-space:nowrap;width:100%;"><a class="item" href="seguimiento.php" target="formulario"
+                  style="border-style:none;font-size:1em;margin-left:10px;">Seguimiento</a></td>
+            </tr>
+
+            <tr>
+              <td style="white-space:nowrap;width:100%;"><a class="item " href="correos_masivos.html"
+                  target="formulario" style="border-style:none;font-size:1em;margin-left:10px;">Correo masivo</a></td>
+            </tr>
+            <a>
+            </a>
+            <a href="incidencias.php" target="formulario">
+              <span class="fas fa-user-shield "></span>Incidencias</a>
+
+            <a href="registro_asuntos_p.php" target="formulario">
+              <span class="fas fa-file-signature"></span>Asuntos Pendientes</a>
+
+
+            <a href="admin_clave_acceso.html" target="formulario">
+              <span class="fa fa-key"></span> Clave de acceso </a>
+
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="container">
+        <div class="border m-4" style="height: 810px;">
+          <iframe src="alumno_datos_personales.html" frameborder="0" height="100%" width="100%"
+            name="formulario"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+      <!-- Copyright -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+        <section class="d-flex justify-content-center justify-content-lg-between">
+          <div class="me-5 d-none d-lg-block">
+          </div>
+
+        </section>
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://www.ipn.mx/">Instituto Politécnico Nacional</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
