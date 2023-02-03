@@ -42,14 +42,11 @@
         &nbsp;&nbsp; <input class="btn btn-primary" type="button" value="Reiniciar" onclick=""> 
         </div><br>
 
-<div class="tab-content p-5 border border-2" style="height: center;" id="myTabContent">
+<div class="tab-content p-3 border border-1" style="height: center;" id="myTabContent">
 				
             
-    <div class="tab-pane fade show active" id="DGE" role="tabpanel"
-           aria-labelledby="DGE-tab">
-           <div class="row" style="text-indent: 6px;">
  
-           <div class="row mb-7" id="consulta">
+           <div class="row mb-3" id="consulta">
            <table class="table">
             <thead class="table-light" align="center">
             <tr>
@@ -81,8 +78,6 @@
             while($row=mysqli_fetch_assoc($resultado)) 
             {
              ?>   
-            
-
              <tr align="center">
               <td><?php echo $row["folio"]?> </td>
               <td><?php echo $row["interno"]?></td>
