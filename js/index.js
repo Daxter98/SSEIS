@@ -1,18 +1,6 @@
 // global vars
 const currentUser = JSON.parse(sessionStorage.getItem("user"));
 
-// OnLoad para index.html para que se puedan ocultar las opciones
-function onLoad() {
-    // currentUser se almacena en el navegador, tambien podemos usar esta linea de codigo
-    // para actualizar la contraseña del usuario
-
-    // Ejemplo de como ocultar las opciones
-    if(currentUser.nivel === "ADMINISTRADOR")
-    {
-        document.getElementById("controlAlumnos").style.display = "none";
-    }
-}
-
 // Password change
 $('#form-password-change').submit(function (e) {
     e.preventDefault();

@@ -25,14 +25,33 @@ $(document).ready(() =>
           if(result.ok){
             // Current user via sessionStorage
             sessionStorage.setItem("user", JSON.stringify(result.user));
+
+            switch(result.user.nivel)
+            {
+              case "ADMINISTRADOR":
+                location.href = 'vista_administrador.html';
+                break;
+              case "CAPTURISTA":
+                location.href = 'vista_capturista.html';
+                break;
+              case "VIGILANCIA":
+                location.href = 'vista_vigilante.html';
+                break;
+              default:
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Las credenciales introducidas no contienen un nivel de acceso valido.'
+                });
+                break;
+            }
             
-            location.href = 'vista_administrador.html';
           }else{
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
               text: 'Las credenciales introducidas no son validas, verifique su informacion.'
-            })
+            });
           } 
         },
         error: function(XMLHttpRequest, textStatus, errorThrown){
