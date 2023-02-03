@@ -17,5 +17,8 @@ Al clonar a la carpeta destino y con composer instalado, debemos ejecutar `compo
 - Se implementa el uso de almacenamiento de sesion para almacenar los datos del usuario actual
 - Se implementa cambio de password con cierre de sesion.
 
+[03/02/23]
+- Se implementa que el sistema sea capaz de definir que vista cargar en base al nivel de acceso del usuario.
+
 ### TODO
-- Completar el ocultar opciones dependiendo del nivel de acceso del usuario.
+- [X] Completar el ocultar opciones dependiendo del nivel de acceso del usuario.
