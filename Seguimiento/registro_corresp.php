@@ -22,7 +22,7 @@ $turnado=$_POST['turnado'];
         
         $sql=mysqli_query($conexion,"INSERT INTO correspondencia(interno,no_oficio,fecha_oficio,asunto,status,detalle,destinatario,remitente,fecha_recepcion,turnado) VALUES ('$interno', '$no_folio', '$fecha_of', '$asunto', '$status', '$detalle', '$dest', '$rem', '$fechaRec', '$turnado') ");
         
-        header('location: Seguimiento.php');
+        header('location: seguimiento.php');
 
     } catch (Exception $e) {
         print "¡Error BD!: " . $e->getMessage() . "<br/>";
