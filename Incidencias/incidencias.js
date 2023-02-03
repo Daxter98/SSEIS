@@ -1,3 +1,10 @@
+$("body").on("submit", "citatorio_form", function() {
+    $(this).submit(function() {
+        return false;
+    });
+    return true;
+});
+
 $(document).on("click","#cerrar", function(){
     $('#citatorio_form')[0].reset();
     $('#incidencia_form')[0].reset();
@@ -20,7 +27,7 @@ $(document).on("click","#callcita", function(){
 $(document).ready(function(){
     $("#boleta").change(function(){
         var boleta = $("#boleta").val()
-        
+        console.log("mi boleta "+boleta);
         $.post("./registroincidencia.php?op=get_alumno", {boleta : boleta}, function (data) {
             $("#nombre_al").html(data);
             console.log("datos: "+data);
@@ -76,11 +83,6 @@ $("#citatorio_form").submit(function(e) {
         type: "POST",
         data: form.serialize(),
         success: function(data){    
-            data = JSON.parse(data);
-            console.log("exito en registrar citatorio para:");
-            console.log("1: "+ data.folio, data.no_cita, data.boleta);
-            console.log("2: "+ data.fechag, data.fechac, data.horac);
-            console.log("3: "+ data.areac, data.persona);
             $('#citatorio_form')[0].reset();
             $('#incidencia_form')[0].reset();
             $("#modalcitatorio").modal('hide');

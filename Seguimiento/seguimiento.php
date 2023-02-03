@@ -6,13 +6,13 @@
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon -->
-  <link rel="icon" type="favicon/x-icon" href="img/logos/IPN.png"/>
+  <link rel="icon" type="favicon/x-icon" href="../img/logos/IPN.png"/>
   <!-- CSS -->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="../css/main.css">
   <!-- Iconos de Font Awesome -->
-  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="../css/all.min.css">
   <!-- Styles SweetAlert -->
-  <link rel="stylesheet" href="css/sweetalert2.min.css">
+  <link rel="stylesheet" href="../css/sweetalert2.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title> Control SSEIS</title>
 </head>
@@ -21,13 +21,13 @@
         
 		<div class="row">
             <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="90px" src="img\logos\IPN.png" alt="IPN">
+                <img class="img-fluid" width="90px" src="..\img\logos\IPN.png" alt="IPN">
             </div>
             <div class="col-9 d-flex justify-content-around align-items-center">
                 <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "Narciso Bassols"</h3>
             </div>
             <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
+                <img class="img-fluid" width="70px" src="..\img\logos\voca8.png" alt="cecyt 8">
             </div>
         </div>
         <br><br>
@@ -39,7 +39,7 @@
         &nbsp;&nbsp;&nbsp; Numero de Oficio: &nbsp;&nbsp;&nbsp; 
         <input type= "number" name="no_oficio" id="no_oficio" placeholder="No Oficio">
         &nbsp;&nbsp; <input class="btn btn-primary" type="submit" value="Buscar" formmethod="GET"> 
-        &nbsp;&nbsp; <input class="btn btn-primary" type="button" value="Reiniciar" onclick=""> 
+        &nbsp;&nbsp; <input class="btn btn-primary" type="submit" value="Mostrar Todo" formmethod="GET" id="Reiniciar" name="Reiniciar"> 
         </div><br>
 
 <div class="tab-content p-3 border border-1" style="height: center;" id="myTabContent">
@@ -47,7 +47,7 @@
             
  
            <div class="row mb-3" id="consulta">
-           <table class="table">
+           <table class="table" id="tabla" name="tabla">
             <thead class="table-light" align="center">
             <tr>
              <th scope="col">Folio</th>
@@ -67,10 +67,15 @@
            
             <?php   
             
-            include("conexion.php");
+            require("../config/conexion.php");
+
+            
+        if (isset($_GET['Reiniciar'])) {
+            general();
+        }else{
 
             if(isset($_GET['no_oficio'])){
-	
+
                 $no_oficio= $_GET['no_oficio'];
                 $buscar= "SELECT * FROM correspondencia WHERE no_oficio='$no_oficio'";
 
@@ -108,7 +113,15 @@
 <?php
             }   
             else{ 
-                $consulta= "SELECT * FROM correspondencia";
+            
+            general();
+            
+        }}
+        
+        function general(){
+            require("../config/conexion.php");
+
+            $consulta= "SELECT * FROM correspondencia";
             $resultado= $conexion->query($consulta);
             while($row=mysqli_fetch_assoc($resultado)) 
             {
@@ -131,10 +144,11 @@
             <a href="eliminar_corresp.php?folio=<?php echo $row["folio"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
             </td>
             </tr>
-            
-            <?php
+        <?php    
             } mysqli_free_result($resultado);
-        }?> 
+        }
+        
+        ?> 
         
             </tbody>
              </table>
@@ -142,13 +156,14 @@
 
         </div>  
        </div>
-       <script src="confirmacion.js"></script>
+       <script src="../confirmacion.js"></script>
 </div>
 
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/sweetalert2.all.min.js"></script>
-<script src="js/main.js"></script>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
+<script src="../js/main.js"></script>
 </body>
+
 
 </html>

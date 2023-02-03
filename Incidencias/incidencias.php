@@ -1,5 +1,5 @@
 <?php 
-include("./conexion.php");
+include("../config/conexion.php");
 
 $sql = "SELECT MAX(folio_inc)+1 FROM  `incidencias`";
 $resultado= $conexion->query($sql);
@@ -14,13 +14,13 @@ $row= mysqli_fetch_array($resultado);
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon -->
-  <link rel="icon" type="favicon/x-icon" href="./img/logos/IPN.png"/>
+  <link rel="icon" type="favicon/x-icon" href="../img/logos/IPN.png"/>
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="../css/main.css">
   <!-- Iconos de Font Awesome -->
-  <link rel="stylesheet" href="./css/all.min.css">
+  <link rel="stylesheet" href="../css/all.min.css">
   <!-- Styles SweetAlert -->
-  <link rel="stylesheet" href="./css/sweetalert2.min.css">
+  <link rel="stylesheet" href="../css/sweetalert2.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title> Control SSEIS</title>
 </head>
@@ -29,13 +29,13 @@ $row= mysqli_fetch_array($resultado);
         
 		<div class="row">
             <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="90px" src=".\img\logos\IPN.png" alt="IPN">
+                <img class="img-fluid" width="90px" src="..\img\logos\IPN.png" alt="IPN">
             </div>
             <div class="col-9 d-flex justify-content-around align-items-center">
                 <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "narciso Bassols"</h3>
             </div>
             <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="70px" src=".\img\logos\voca8.png" alt="cecyt 8">
+                <img class="img-fluid" width="70px" src="..\img\logos\voca8.png" alt="cecyt 8">
             </div>
         </div>
       </div>
@@ -115,18 +115,10 @@ $row= mysqli_fetch_array($resultado);
               </textarea>
               </div><br><br>
 
-              <div class="col" style="padding-left:26%">
-                <input class="btn btn-primary" id="registrar" type="submit" value="Registrar">&nbsp;&nbsp;&nbsp;
-                <a href="#" id="callcita" name="callcita"> Agregar Citatorio</a>
-            </form>
-              </div>
-            <br><br><br>
-      <p> </p>
-
 
         <div class="col-sm-9 bg-light p-3 border" id="form">
 
-          <form method="get"> Normatividad   <br />
+          <b>Normatividad </b>  <br />
             <input name="1" type="checkbox" /> Apoderarse indebidamente de bienes y documentos que formen parte del patrimonio del Instituto, de su personal o de otros alumnos;
             <br />
             <input name="2" type="checkbox" /> Asumir actitudes irrespetuosas, provocativas o violentas en contra de cualquier miembro de la comunidad politécnica;
@@ -152,6 +144,14 @@ $row= mysqli_fetch_array($resultado);
             <br />
             <input name="13" type="checkbox" />  Realizar cualquier actividad que atente contra el orden, buen nombre, prestigio académico y dignidad del Instituto
             <br />
+  </div>
+            <br><br><br>
+      <p> </p>
+      <br><br><br>
+            <div class="col" style="padding-left:40%">
+                <input class="btn btn-primary" id="registrar" type="submit" value="Registrar">&nbsp;&nbsp;&nbsp;
+            
+            
             </form>
       </div>
       <p> </p>
@@ -221,10 +221,10 @@ $row= mysqli_fetch_array($resultado);
 </div>
              
 <?php require_once("./citatorio.php");?>
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/sweetalert2.all.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/sweetalert2.all.min.js"></script>
+    <script src="../js/main.js"></script>
     <script src="./incidencias.js"></script>
 </body>
 

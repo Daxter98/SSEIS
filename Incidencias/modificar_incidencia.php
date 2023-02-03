@@ -1,6 +1,6 @@
 <?php
 //conexion con servidor y db
-include("conexion.php");
+include("../config/conexion.php");
 //include("vista_agenda.php");
 //nombre de la base de datos para seleccionar la base
 //$basededatos="sseis";
