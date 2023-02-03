@@ -1,25 +1,5 @@
 <?php
 include 'conexion.php';
-/*
-session_start();
-if(isset($_GET['cerrar_sesion'])){
-    session_unset();
-    session_destroy();
-}
-if(isset($_SESSION['nivel'])){
-    switch($_SESSION['nivel']){
-        case 'ADMINISTRADOR':
-            header('location: vista_administrador.html')
-            break;
-        case 'CAPTURISTA':
-            header('location: vista_capturista.html')
-            break;
-        case 'VIGILANTE':
-            header('location: vista_vigilante.html')
-                break;
-        default:
-    }
-}*/
 $us = $_POST['us'];
 $con = $_POST['con'];
 //$nivel = $_POST['nivel'];

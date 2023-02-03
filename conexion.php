@@ -4,6 +4,11 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE);
 
 $conexion = mysqli_init(); 
+
+if(!$conexion){
+    die("MySQLI init failed"); 
+}
+
 $usuario ="sseis_root";
 $contrasena ="DevTest@01";  
 $host = "sseis-server.mysql.database.azure.com";
