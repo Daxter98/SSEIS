@@ -6,7 +6,7 @@
     //$base="sseis";
     //$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
     $no_asunto= $_GET['no_asunto'];
-    $modificar= "SELECT * FROM asuntos_pendientes WHERE no_asunto = '$no_asunto'";
+    $modificar= "SELECT * FROM asuntos_p WHERE no_asunto = '$no_asunto'";
     $ejecutar= $conexion->query($modificar);
     $dato= $ejecutar->fetch_array();
 ?>

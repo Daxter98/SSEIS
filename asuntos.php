@@ -2,11 +2,11 @@
 //conexion con servidor y db
 include("conexion.php");
 //nombre de la base de datos para seleccionar la base
-$basededatos = "sseis";
+//$basededatos = "sseis";
 //var_dump( $_POST['siglas_a']);
 //die();
 
-$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die("Sin conexion :(");
+//$conexion = mysqli_connect($host, $usuario, $contrasena, $base) or die("Sin conexion :(");
 if (isset($_POST['siglas_a'])) {
     $siglas_a_str = implode(" ", $_POST['siglas_a']); // converts $_POST siglas_a into a string
     $siglas_a_array = explode(" ", $siglas_a_str); // converts the string to an array which you can easily manipulate
@@ -27,7 +27,7 @@ function insertar($no_asunto, $siglas_a, $descripcion, $prioridad, $fecha_limite
     global $conexion; //tomamos la variable del archivo conexion
     for ($i = 0; $i < count($siglas_a); $i++) {
 
-        if (!mysqli_query($conexion, "INSERT INTO asuntos_pendientes (no_asunto, siglas_a, descripcion, prioridad, fecha_limite, status) 
+        if (!mysqli_query($conexion, "INSERT INTO asuntos_p (no_asunto, siglas_a, descripcion, prioridad, fecha_limite, status) 
         VALUES ('" . $no_asunto . "','" . $siglas_a[$i] . "','" . $descripcion . "','" . $prioridad . "','" . $fecha_limite . "','" . $status . "')")) {
             //mensaje en caso de que falle el registro
             echo "Error al registrar";
