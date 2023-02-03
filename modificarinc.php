@@ -3,12 +3,12 @@
 <?php
   include("conexion.php");
    // global $conexion;
-    $base="sseis";
-    $conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
-    $no_asunto= $_GET['no_asunto'];
-    $modificar= "SELECT * FROM asuntos_pendientes WHERE no_asunto = '$no_asunto'";
-    $ejecutar= $conexion->query($modificar);
-    $dato= $ejecutar->fetch_array();
+    //$base="sseis";
+    //$conexion = mysqli_connect('localhost', $usuario, $contrasena, $base) or die ("Sin conexion :(");
+    $folio_inc = $_GET['folio_inc'];
+    $modificar = "SELECT * FROM incidencias WHERE folio_inc = '$folio_inc'";
+    $ejecutar = $conexion->query($modificar);
+    $dato = $ejecutar->fetch_array();
 ?>
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title> Control SSEIS</title>
 </head>
-<title>Modificar Asunto</title>
+<title>Modificar Incidencia</title>
 
 <body id="body_agenda">
     <div class="container p-4">
@@ -42,69 +42,30 @@
     </div>
     <br><br>
 
-    <form action="modificar_asun.php" id="formulario" method="POST">
+    <form action="modificar_incidencia.php" id="formulario" method="POST">
     </header>
     <div class="row">
     <p> </p>
     <div  class="fw-bold">Introduce los siguientes datos:  </div>
     <div class=" row mb-3">
-                <input type="hidden" name="no_asunto" id="no_asunto" value="<?php echo $dato['no_asunto'] ?>">
+                <input type="hidden" name="folio_inc" id="folio_inc" value="<?php echo $dato['folio_inc'] ?>">
             </div>
-    
-      <div class="row align-items-start">
-            <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" method="POST">
-
-              <select class="form-select mb-9" id="prioridad" name="prioridad" aria-label=".form-select-sm example">
-              <option selected>Seleccione la prioridad</option>
-
-              <?php     
-      $tablatres="SELECT * FROM nivel_prioridad";
-      $resultadotres=mysqli_query($conexion, $tablatres);
-        while($rowtres=mysqli_fetch_assoc($resultadotres))
-        {
-              ?>
-                <option value="<?php echo $rowtres["prioridad"] ?>"><?php echo $rowtres["prioridad"] ?></option>
-              <?php
-  } mysqli_free_result($resultadotres);
-?>
-    
-              </select>
+    <p> </p>
+    <div class="container"></div>
+        <div class="col" aria-label="Default select example">
+          <div class="col-6 col-sm-3 fw-bold">
+            <input type="hecho" class="form-control" name="hecho" id="hecho" placeholder="Hecho">
           </div>
-          </div>
-          <p> </p>
-    
-          <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" align="left">
-            Fecha respuesta:
+        </div>
+        <p> </p>
+    <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" align="left">
+            Fecha de la incidencia:
             </div>
             <p> </p>
           <div class="col-sm-2 col-md-2 col-xl-2 col-xl-2" id="form" align="left">
-                <input id="fecha_respuesta" type="date" name="fecha_respuesta">
+                <input id="fecha_reporte" type="date" name="fecha_reporte">
             </div>
-            <p> </p>
-    
-            <div class="row align-items-start">
-            <div class="col-sm-12 col-md-6 col-xl-4 col-xl-4" id="form" method="POST">
-          <td> <select class="form-select mb-9" id="status" name="status" aria-label=".form-select-sm example">
-                            <option selected>Seleccione el status</option>
-
-                            <?php     
-                                $tablatres="SELECT * FROM estatus";
-                                $resultadotres=mysqli_query($conexion, $tablatres);
-                                    while($rowtres=mysqli_fetch_assoc($resultadotres))
-                                    {
-                                        ?>
-                                            <option value="<?php echo $rowtres["status"] ?>"><?php echo $rowtres["status"] ?></option>
-                                        <?php
-                            } mysqli_free_result($resultadotres);
-                            ?>
-                                
-              </select></td>
-              </div>
-          </div>
-          <p> </p>
-     </div>
-    <p> </p>
-    
+            <p> </p>   
   
             <div class=" row mb-3">
                 <button type="submit" class="btn btn-primary">Guargar Cambios</button>

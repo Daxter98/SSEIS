@@ -170,17 +170,21 @@ $row= mysqli_fetch_array($resultado);
          <table class="table">
           <thead class="table-light" align="center">
           <tr>
+          <th scope="col">Folio</th>
+          <th scope="col">Boleta</th>
           <th scope="col">Hecho</th>
           <th scope="col">Fecha</th>
-          <th scope="col">Clasificación</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Persona que reportó</th>
           <th scope="col">Amonestación</th>
           <th scope="col">Citatorio</th>
-          <th scope="col">Folio</th>
+    
           </tr>
           </thead>
           <tbody>
          <!-- 
           <?php     
+           $tablados="SELECT * FROM incidencias";
           $resultadodos=mysqli_query($conexion, $tablados);
           while($rowdos=mysqli_fetch_assoc($resultadodos)) 
           {
@@ -188,26 +192,30 @@ $row= mysqli_fetch_array($resultado);
             -->
 
            <tr align="center">
-           <td><?php echo $rowdos["Hecho"]?></td>
-           <td><?php echo $rowdos["Fecha"]?></td>
-           <td><?php echo $rowdos["Clasificación"]?></td>
-           <td><?php echo $rowdos["Amonestación"]?></td>
-           <td><?php echo $rowdos["Citatorio"]?></td>
-           <td><?php echo $rowdos["Folio"]?> </td>
+           <td><?php echo $rowdos["folio_inc"]?> </td>
+           <td><?php echo $rowdos["boleta"]?> </td>
+           <td><?php echo $rowdos["hecho"]?></td>
+           <td><?php echo $rowdos["fecha_reporte"]?></td>
+           <td><?php echo $rowdos["hora"]?> </td>
+           <td><?php echo $rowdos["quien_reporto"]?></td>
+           <td><?php echo $rowdos["observacion"]?></td>
+           <td><?php echo $rowdos["citatorio"]?></td>
+          
            <td>
-          <a href="modificarinc.php">"><button type="button" class="fas fa-edit"></button></a> 
-          <a href="eliminaragenda1.php?idCita=<?php echo $rowdos["idCita"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
+          <a href="modificarinc.php?folio_inc=<?php echo $rowdos["folio_inc"]?>"><button type="button" class="fas fa-edit"></button></a> 
+          <a href="eliminar_incidencia.php?folio_inc=<?php echo $rowdos["folio_inc"] ?>"><button type="button" class="fas fa-trash-alt"></button></a>
           </td>
           </tr>
           <!-- 
           <?php
-          } mysqli_free_result($resultados);
+          } mysqli_free_result($resultadodos);
           ?> 
           -->
           </tbody>
            </table>
             </div>
-
+            <script src="confirmacion.js">
+        </script>
       </div>  
      </div>
 </div>
