@@ -80,7 +80,8 @@ $row= mysqli_fetch_array($resultado);
             <div class="column"> 
               <input type="text" class="form-center" style="padding: right 23px;" name="boleta" id="boleta" size="10" placeholder="Boleta Alumno">
               &nbsp;&nbsp;<!-- <input type="text" class="form-center" name="nombre_al" id="nombre_al"> -->
-              <select class="form-center" name="nombre_al" id="nombre_al"> </select>
+              <select class="form-center" name="nombre_al" id="nombre_al" 
+              style="-webkit-appearance: none; -moz-appearance: none; text-indent: 1px; text-overflow: ''; border:none"> </select>
             </div>
   
             <div class="col" style="padding-left:80px;"><br>
