@@ -1,6 +1,6 @@
 <?php
 
-include("conexion.php");
+include("../config/conexion.php");
 
 $interno= $_POST['interno'];
 $no_folio=$_POST['no_folio'];
