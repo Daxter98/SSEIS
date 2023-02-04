@@ -20,7 +20,7 @@ echo $prioridad," y " ,$fecha_respuesta," y ", $status;
 
 //modificar los datos
 
-$modifica="UPDATE `asuntos_pendientes` SET `prioridad` = '$prioridad', `fecha_respuesta`= '$fecha_respuesta', `status` = '$status' WHERE `asuntos_pendientes`.`no_asunto` = $no_asunto";
+$modifica="UPDATE `asuntos_p` SET `prioridad` = '$prioridad', `fecha_respuesta`= '$fecha_respuesta', `status` = '$status' WHERE `asuntos_p`.`no_asunto` = $no_asunto";
 $resultado=mysqli_query($conexion, $modifica);
 if($resultado){
     header("location: registro_asuntos_p.php");
