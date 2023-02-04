@@ -61,6 +61,7 @@ switch($_GET["op"]){
                 SET citatorio= 1
                 WHERE folio_inc= '$folio_inc';";
                 $res = $conexion->query($update);
+                header('location: incidencias.php');
             }
             
         } catch (Exception $e) {
