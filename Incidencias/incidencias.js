@@ -61,9 +61,9 @@ function citatorio(folio, boleta){
     $('#boleta_al').val(boleta);
     $('#folio_inc').val(folio);
     
-    var boleta_al = $('#boleta_al').val();
+    var folio_inc = $('#folio_inc').val();
 
-        $.post("./registroincidencia.php?op=get_no_cita", {boleta_al : boleta_al}, function (data) {
+        $.post("./registroincidencia.php?op=get_no_cita", {folio_inc : folio_inc}, function (data) {
             data = JSON.parse(data);
             console.log("boleta "+data.boleta);
             console.log("no_cita "+data.ncita);

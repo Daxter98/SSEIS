@@ -20,11 +20,11 @@ $resultado = $conexion->query($sql);
                     
                     <div class="form-group">
                         <label class="form-label" id="folio">Folio Incidencia:</label>
-                        <input type="text" class="form-control" id="folio_inc" name="folio_inc" >
+                        <input type="text" class="form-control" readonly id="folio_inc" name="folio_inc" >
                         <label class="form-label" id="1no_cita">No. Cita: <?php   ?></label>
-                        <input type="text" class="form-control" id="no_cita" name="no_cita">
+                        <input type="text" class="form-control" id="no_cita" readonly name="no_cita">
                         <label class="form-label" id="1boleta">Boleta:</label>
-                        <input type="text" class="form-control" size="10" id="boleta_al" name="boleta_al">
+                        <input type="text" class="form-control" size="10" readonly id="boleta_al" name="boleta_al">
                     </div>
 
                     <div class="form-group">

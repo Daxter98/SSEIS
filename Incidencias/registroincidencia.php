@@ -73,15 +73,14 @@ switch($_GET["op"]){
 
     case "get_no_cita":
 
-        $boleta2 =$_POST['boleta_al'];
+        $folio_inc =$_POST['folio_inc'];
         try {
             
-            $sql="
-            SELECT COUNT(boleta)+1 AS num_cita FROM citatorios WHERE boleta= '$boleta2'";
+            $sql="SELECT COUNT(*)+1 FROM `citatorios` WHERE folio_inc='$folio_inc'";
             $resultado = $conexion->query($sql);
             $row= $resultado-> fetch_assoc(); 
             $output["ncita"]= $row['num_cita'];
-            $output["boleta"]= $boleta2;
+            $output["boleta"]= $folio_inc;
             echo json_encode($output);
     
         } catch (Exception $e) {

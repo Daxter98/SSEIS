@@ -215,13 +215,13 @@ $row= mysqli_fetch_array($resultado);
           </tbody>
            </table>
             </div>
-            <script src="confirmacion.js">
-        </script>
       </div>  
      </div>
 </div>
              
 <?php require_once("./citatorio.php");?>
+            <script src="../confirmacion.js">
+        </script>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/sweetalert2.all.min.js"></script>
