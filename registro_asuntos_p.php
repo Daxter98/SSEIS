@@ -42,7 +42,7 @@
                 <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
             </div>
         </div>
-        <br><br>
+       
 
         <form action="asuntos_pendientes.html" id="formulario" method="POST">
         </header>
@@ -52,7 +52,7 @@
        
         <div class="w-100"></div>
       </div>
-
+      <p> </p>
       <div class="container"></div>
               <div class="col"  aria-label="Default select example" >
                 <div class="col-6 col-sm-3 fw-bold" >
@@ -145,7 +145,7 @@
           <input name="siglas_a[]" type="checkbox" value="UPIS" />  UPIS
           <br />
           <input name="siglas_a[]" type="checkbox" value="SSEIS" />  SSEIS
-
+          <p> </p>
           <div class="col">
             <input class="btn btn-primary" type="submit" value="Registrar">
         </div>

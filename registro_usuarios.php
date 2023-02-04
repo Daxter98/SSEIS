@@ -34,15 +34,13 @@
                 <img class="img-fluid" width="70px" src="img\logos\voca8.png" alt="cecyt 8">
             </div>
         </div>
-        <br><br>
+        
         <form action="usuarios.php" id="formulario" method="POST">
     <div class="container p-4">
-      <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+   
 
                   <div class="row">
-                    <p> </p>
                     <div  class="fw-bold">Introduce los siguientes datos:  </div>
-              
                     </div>
                     <p> </p>
                     <div class="container"></div>
