@@ -20,5 +20,9 @@ Al clonar a la carpeta destino y con composer instalado, debemos ejecutar `compo
 [03/02/23]
 - Se implementa que el sistema sea capaz de definir que vista cargar en base al nivel de acceso del usuario.
 
+[05/02/23]
+- SE corrige vista de modificacion de correspondencia.
+
 ### TODO
 - [X] Completar el ocultar opciones dependiendo del nivel de acceso del usuario.
+- [ ] Derivado de que se cambio el lugar de  conexion.php, ajustar todos los documentos php que hagan uso del archivo.

@@ -4,19 +4,31 @@ include("../config/conexion.php");
 
 $folio = $_GET['folio'];
 $detalle1 = $_GET['detalle'];
-$estatus1 = $_GET['status'];
+//$estatus1 = $_GET['status'];
 $no_of = $_GET['no_oficio'];
 $asun = $_GET['asunto'];
 
-
-function Modificar_Corresp($conn,$fol,$stM,$detM)
+function modificar($folio,$estatus,$detalle)
 {
-
-    $modifica= "UPDATE correspondencia SET status='$stM', detalle='$detM' WHERE folio='$fol'";
-    $resultado= mysqli_query($conn, $modifica);
+    // hacemos disponible la conexion
+    global $conexion;
+    $modifica= "UPDATE correspondencia SET status='$estatus', detalle='$detalle' WHERE folio='$folio'";
+    $resultado= mysqli_query($conexion, $modifica);
     if($resultado){
-        header("location:seguimiento.php");
+      $conexion->close();
+      header("location:seguimiento.php");
     }
+}
+
+// utilizamos los datos modificados como control de lo que se quiere realizar
+// en este caso como estamos modificando utilizando un form con metodo POST
+if(isset($_POST["status_mod"]) && isset($_POST["detalle_mod"]))
+{
+  $new_status = $_POST["status_mod"];
+  $new_detail = $_POST["detalle_mod"];
+
+  // Mandamos a llamar a nuestra funcion
+  modificar($folio, $new_status, $new_detail);
 }
 
 ?>
@@ -37,32 +49,9 @@ function Modificar_Corresp($conn,$fol,$stM,$detM)
   <!-- Styles SweetAlert -->
   <link rel="stylesheet" href="../css/sweetalert2.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title> Control SSEIS</title>
-</head>
-<body>
-    <div class="container p-4">
-        
-		<div class="row">
-            <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="90px" src="..\img\logos\IPN.png" alt="IPN">
-            </div>
-            <div class="col-9 d-flex justify-content-around align-items-center">
-                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "narciso Bassols"</h3>
-            </div>
-            <div class="col d-flex justify-content-around align-items-center">
-                <img class="img-fluid" width="70px" src="..\img\logos\voca8.png" alt="cecyt 8">
-            </div>
-        </div>
-      </div>
+  <title>Control SSEIS</title>
 
-        <br><br>
-        <form action="<?php 
-        $status_mod = $_POST['status_mod'];
-        $detalle_mod = $_POST['detalle_mod'];
-        Modificar_Corresp($conexion, $folio, $status_mod, $detalle_mod);
-        ?>" method="POST">
-        </header>
-        <style>
+  <style>
       * {
         box-sizing: border-box;
       }
@@ -89,55 +78,69 @@ function Modificar_Corresp($conn,$fol,$stM,$detM)
         float:right;
       }
       </style>
-    
-    <div class="container">
-    <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
-        <span class="link"> 
-            <a href="Seguimiento.php" class="btn btn-primary">Regresar</a>
-        </span> <br><br>
+</head>
+<body>
+    <div class="container p-4">
         
-        <div class="col"> 
-        <b><label class="label-1" text-align="right"> Folio: <?php echo $folio; ?> </label></b>
-        </div> <br>
+		<div class="row">
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="90px" src="..\img\logos\IPN.png" alt="IPN">
+            </div>
+            <div class="col-9 d-flex justify-content-around align-items-center">
+                <h3 class="text-black mx-5 text-center">CENTRO DE ESTUDIOS CIENTIFICOS Y TECNOLOGICOS NO. 8 "narciso Bassols"</h3>
+            </div>
+            <div class="col d-flex justify-content-around align-items-center">
+                <img class="img-fluid" width="70px" src="..\img\logos\voca8.png" alt="cecyt 8">
+            </div>
+        </div>
+      </div>
 
-        <div class="column"> 
-        <b><label class="label-1"> Asunto: <?php echo $asun; ?> </label></b>
-        </div> 
-
-        <div class="col"> 
-        <b><label class="label-1"> No. de Oficio : <?php echo $no_of; ?> </label></b>
-        </div> 
         <br><br>
-
-        <div  class="fw-bold">Introduce los cambios:   </div> <br>
-
-        <div class="col"> 
-              <label for="status_mod"> Seleccione estatus: </label>
-              <select class="form-select mb-9" id="status_mod" name="status_mod" aria-placeholder="Seleccione estatus">
+        <form  method="POST">
+            <div class="container">
+              <div class="tab-content p-4 border border-1" style="height: auto;" id="myTabContent">
+                <span class="link"> 
+                    <a href="Seguimiento.php" class="btn btn-primary">Regresar</a>
+                </span> <br><br>
                 
-                <option selected value="Normal"> Normal</option>
-                <option selected value="Pendiente"> Pendiente </option>
-                <option selected value="Urgente"> Urgente </option>
-                <option selected value="Finalizado"> Finalizado </option>
-                
-              </select><br>
-            </div>
+                <div class="col"> 
+                <b><label class="label-1" text-align="right"> Folio: <?php echo $folio; ?> </label></b>
+                </div> <br>
 
-            <div class="column">
-                <label for="detalle_mod"> Descripción: </label>
-                <textarea type="text" class="form-control" name="detalle_mod" id="detalle_mod"> 
-                <?php echo $detalle1; ?>
-                </textarea>
-            </div>
-            <br><br><br>
-            <br><br><br>
-            <div class="col-6">
-                  <input class="btn btn-primary" type="submit" value="Guardar Cambios">
+                <div class="column"> 
+                <b><label class="label-1"> Asunto: <?php echo $asun; ?> </label></b>
+                </div> 
+
+                <div class="col"> 
+                <b><label class="label-1"> No. de Oficio : <?php echo $no_of; ?> </label></b>
+                </div> 
+                <br><br>
+
+                <div  class="fw-bold">Introduce los cambios:   </div> <br>
+
+                <div class="col"> 
+                      <label for="status_mod"> Seleccione el nuevo estatus: </label>
+                      <select class="form-select mb-9" id="status_mod" name="status_mod" aria-placeholder="Seleccione estatus">
+                        <option selected value="Normal">Normal</option>
+                        <option selected value="Pendiente">Pendiente </option>
+                        <option selected value="Urgente">Urgente </option>
+                        <option selected value="Finalizado">Finalizado </option>  
+                      </select>
+                      <br>
+                    </div>
+
+                    <div class="column">
+                        <label for="detalle_mod"> Descripción: </label>
+                        <textarea type="text" class="form-control" name="detalle_mod" id="detalle"><?php echo $detalle1;?></textarea>
+                    </div>
+                    <br><br><br>
+                    <br><br><br>
+                    <div class="col-6">
+                          <input class="btn btn-primary" id="btnSubmit" type="submit" value="Guardar Cambios">
+                    </div>
               </div>
-    </div></div>
-            </form>
-  
-  
+            </div>
+          </form>
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/sweetalert2.all.min.js"></script>
